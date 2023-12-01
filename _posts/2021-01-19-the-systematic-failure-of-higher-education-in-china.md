@@ -5,7 +5,7 @@ subtitle:   "The Systematic Failure of Higher Education in China"
 date:       2021-01-19 12:00:00
 author:     "Hux"
 catalog: false
-published: false
+published: true
 header-style: text
 tags:
   - 被夹
