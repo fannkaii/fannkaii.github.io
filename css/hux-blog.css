@@ -1305,6 +1305,7 @@ samp {
   }
 }
 .post-content-preview {
+  display: none;
   font-size: 13px;
   font-style: italic;
   color: #a3a3a3;
