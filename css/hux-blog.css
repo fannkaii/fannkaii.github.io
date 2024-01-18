@@ -657,8 +657,8 @@ body {
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
      */
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 1.6;
+  font-size: 15px;
   color: #404040;
   overflow-x: hidden;
   text-rendering: auto;
@@ -666,7 +666,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 p {
-  margin: 30px 0;
+  margin: 10px 0;
 }
 @media screen and (max-width: 768px) {
   p {
@@ -783,13 +783,46 @@ samp {
 .post-container a:focus {
   color: #0085a1;
 }
+
+@media (min-width: 1200px) {
+  .container {
+      width: auto /*1170px*/
+  }
+}
+.post-container h1{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.post-container h2{
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.post-container h3 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.post-container h4 {
+  font-size: 14px;
+  font-weight: bold;
+}
+.post-container h5 {
+  font-size: 12px;
+  font-weight: bold;
+}
+.post-container h6 {
+  font-size: 11px;
+  font-weight: bold;
+}
 .post-container h1,
 .post-container h2,
 .post-container h3,
 .post-container h4,
 .post-container h5,
 .post-container h6 {
-  margin: 50px 0 20px;
+  margin: 20px 0 5px;
   line-height: 1.4;
 }
 .post-container h1 + p,
@@ -798,33 +831,33 @@ samp {
 .post-container h4 + p,
 .post-container h5 + p,
 .post-container h6 + p {
-  margin-top: 20px;
+  margin-top: 5px;
 }
-.post-container h2::before {
+/*.post-container h2::before {
   content: " ";
   display: block;
   border-bottom: 1px solid #ececec;
   margin-top: 44px;
   margin-bottom: 30px;
-}
+}*/
 .post-container h4 {
   font-size: 22px;
   font-weight: 600;
   color: gray;
 }
-.post-container h4 + p {
+/*.post-container h4 + p {
   margin-top: 10px;
-}
+}*/
 .post-container h5,
 .post-container h6 {
   font-size: 20px;
   font-weight: 600;
   color: gray;
 }
-.post-container h5 + p,
+/*.post-container h5 + p,
 .post-container h6 + p {
   margin-top: 10px;
-}
+}*/
 @media screen and (max-width: 768px) {
   .post-container h1 {
     font-size: 30px;
