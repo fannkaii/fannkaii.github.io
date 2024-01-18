@@ -878,7 +878,7 @@ samp {
 }
 .post-container ul,
 .post-container ol {
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 @media screen and (max-width: 768px) {
   .post-container ul,
@@ -1648,10 +1648,11 @@ img::-moz-selection {
 /* Tags support End*/
 /* Hux make all img responsible in post-container */
 .post-container img {
-  display: block;
+  /*display: block;*/
   max-width: 100%;
   height: auto;
-  margin: 1.5em auto 1.6em auto;
+  border: 1px solid gray;
+  /*margin: 1.5em auto 1.6em auto;*/
 }
 /* Hux Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,
