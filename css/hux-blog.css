@@ -660,6 +660,7 @@ body {
   line-height: 1.6;
   font-size: 15px;
   color: #000000;
+  background-color: rgb(199, 237, 204);
   overflow-x: hidden;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
