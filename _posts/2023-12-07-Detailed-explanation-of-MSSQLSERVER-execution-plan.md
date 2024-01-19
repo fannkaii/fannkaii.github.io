@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "MSSQLSERVER执行计划详解"
-subtitle: ""
 author: "Kai"
-header-img: ""
+header-style: text
 header-mask: 0.2
 tags:
   - SQLSERVER
