@@ -323,3 +323,9 @@
 <script src="{{ "/js/prism.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/js/prism-autoloader.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/js/prism-line-numbers.min.js" | prepend: site.baseurl }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 选择所有带有语言类的代码块并应用行号功能
+        Prism.highlightAll();
+    });
+</script>
