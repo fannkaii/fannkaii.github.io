@@ -774,6 +774,9 @@ pre,
 samp {
   font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+pre[class*="language-"], code[class*="language-"]{
+  font-size: 15px;
+}
 .postlist-container {
   margin-bottom: 15px;
 }
