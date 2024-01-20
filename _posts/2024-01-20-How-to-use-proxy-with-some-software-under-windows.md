@@ -4,7 +4,7 @@ title: "Windows下的一些软件使用代理的方法(备忘)"
 author: "Kai"
 header-style: text
 tags:
-  - 杂项
+  - Windows
 ---
 
 # 前提：在windows下，科学上网用的v2rayN
