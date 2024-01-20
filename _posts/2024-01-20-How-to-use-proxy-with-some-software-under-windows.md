@@ -24,7 +24,6 @@ git config --global https.proxy https://127.0.0.1:10809
 git config --global http.proxy 'socks5://127.0.0.1:10808'
 git config --global https.proxy 'socks5://127.0.0.1:10809'
 ```
-注：未测试
 
 ### 2.2 如果想取消，执行以下命令即可：
 ```shell
@@ -33,7 +32,13 @@ git config --global --unset https.proxy
 ```
 
 ## 3. 让VSCode使用代理
-```shell
-export http_proxy=http://127.0.0.1:10808 https_proxy=http://127.0.0.1:10809 all_proxy=socks5://127.0.0.1:10809
+在VSCode的设置里搜索“proxy”，点击“在setting.json 中编辑”，在尾部输入：
+```json
+"http_proxy": "http://127.0.0.1:10808",
+"https_proxy": "http://127.0.0.1:10809"
 ```
-注：未测试
+
+参考：
+- [https://lynxux.github.io/posts/2021-07-01-windows-terminal-proxy](https://lynxux.github.io/posts/2021-07-01-windows-terminal-proxy)
+- [https://meaninglive.com/2022/06/21/1447/](https://meaninglive.com/2022/06/21/1447/)
+- [https://blog.csdn.net/m0_57236802/article/details/132169445](https://blog.csdn.net/m0_57236802/article/details/132169445)
