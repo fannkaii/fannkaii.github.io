@@ -8,7 +8,7 @@ tags:
 ---
 
 # 1. 概述
-<img src=https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240121221941.png width=250 />
+![img](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240121221941.png){:width="36px"}
 
 ## 1.1 Git和代码托管中心
 代码托管中心的任务：维护远程库
