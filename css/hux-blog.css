@@ -666,7 +666,7 @@ body {
   color: #000000;
   /*background-color: rgb(199, 237, 204);*/
   overflow-x: hidden;
-  text-rendering: auto;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
