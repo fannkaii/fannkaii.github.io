@@ -1740,6 +1740,7 @@ img::-moz-selection {
 }
 
 /* kai */
+div.postlist-container, div.post-container{ margin-bottom: 60px; }
 div.postlist-container
 {
 	display: grid; 
