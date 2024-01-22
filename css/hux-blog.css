@@ -1738,3 +1738,17 @@ img::-moz-selection {
 .no-scroll {
   overflow-y: hidden;
 }
+
+/* kai */
+div.postlist-container
+{
+	display: grid; 
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(10, auto);
+	grid-auto-flow: column;
+	column-gap: 50px;
+}
+div.post-preview + hr{ display: none; }
+div.post-preview > a > h2.post-title{ margin: 7px 0 0;  font-size: 18px; }
+
+ul.pager{ position: absolute; bottom: -60px; right: 0; margin: 0!important; width: 100% }
