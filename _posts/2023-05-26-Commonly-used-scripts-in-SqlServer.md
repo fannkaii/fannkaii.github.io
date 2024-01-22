@@ -8,7 +8,7 @@ tags:
 ---
 转自：https://mp.weixin.qq.com/s/V4WkmA_A_Y8xUrrkuvl0sg
 
-##1、行转列的用法PIVOT
+## 1、行转列的用法PIVOT
 ```sql
 CREATE table test
 (id int,name nvarchar(20),quarter int,number int)
@@ -44,7 +44,7 @@ as pvt
 结果：
 ![20240121220741](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240121220741.png)
 
-##2、列转行的用法UNPIOVT
+## 2、列转行的用法UNPIOVT
 ```sql
 create table test2
 (id int,name varchar(20), Q1 int, Q2 int, Q3 int, Q4 int)
