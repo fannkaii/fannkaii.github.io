@@ -62,7 +62,7 @@ tags:
 
 
 ## 词类和句子成分的关系
-在句子里，一定的句子成分由一定的词类来担任。现将哪些句子通常由哪些词类来担任列述如下：
+在句子里，一定的句子成分由一定的词类来担任。现将哪些句子通常由哪些词类来担任列述如下：<br />
 **主语：名词和代词**
 **Beijing** is the capital of our country. 北京是我国的首都（名词Beijing作主语）
 **She** is fond of sports. 她爱好运动。（代词She作主语）
@@ -126,30 +126,38 @@ Our monitor does **well** in English. 我们班长英语学得好。（副词wel
 
 
 ## 词序
+词序就是词或句子成分在句子中的排列顺序。英语里的词和句子成分在句子里的位置比较固定。现将句子成分和虚词在陈述句中的一般位置举例说明如下：<br />
+**1. 主语的位置** 在陈述句基本结构的最前面。如：<br />
+**We** help each other. 我们互相帮助。<br />
 
-词序就是词或句子成分在句子中的排列顺序。英语里的词和句子成分在句子里的位置比较固定。现将句子成分和虚词在陈述句中的一般位置举例说明如下：
-**1. 主语的位置** 在陈述句基本结构的最前面。如：
-**We** help each other. 我们互相帮助。
-**2. 谓语动词的位置** 在主语之后。如：
-We **go** to school every day. 我们每天上学。
-**3. 表语的位置** 在连系动词之后。如：
-It's **fine** today. 今天天气很好。
-**4. 宾语的位置** 在及物动词或介词之后。如：
-I like this **place**. 我喜欢这个地方。（及物动词的宾语的位置）
-There are many trees in this **place**. 这地方有许多树。（介词的宾语的位置）
-**5. 定语的位置** 单词做定语，一般放在被修饰语的前面，短语和从句作定语则放在被修饰语的后面。如：
-The school library has **many** books on **agriculture**. 校图书馆有许多关于农业的书。（many和agriculture，都修饰books，many在books前面， on agriculture则在它的后面）
-**6. 状语的位置** 修饰形容词或副词的状语放在被修饰语之前；修饰动词的状语有的放在动词之前，有的放在动词之后。如动词有宾语，状语一般放在宾语之后。如：
-The Summer Palace is **very** beautiful. 颐和园非常美丽。（very为状语，修饰形容词beautiful，放在beautiful之前）
-I know him **well**. 我十分了解他。（well为状语，修饰动词know，放在know之后）
-The students **often** go on a picnic. 这些学生经常出去野餐。（often为状语，修饰动词go，放在它的前面）
-We take exercise **every day**. 我们每天都运动。（every day为状语，修饰动词take，在宾语exercise之后）
-**7. 冠词的位置** 冠词在名词之前。如：
-I met **a** friend at **the** bus-stop. 我在公共汽车站遇到一位朋友。
-**8. 介词的位置** 介词一般也放在名词或代词之前。如：
-There is a map **of** China **on** the wall. 墙上有一副中国地图。
-**9. 连词的位置** 连词一般放在同类的词、短语或从句之间。如：
-They worked quickly **and** efficiently. 他们工作速度快，效率高。
-He works just as hard as everyone else **although** he is over sixty. 他尽管六十多岁了，仍和大家一样努力工作。
-**10. 感叹词的位置** 感叹词常放在句子最前面。如：
-**Oh**，it 's you! 啊，是你呀！
+**2. 谓语动词的位置** 在主语之后。如：<br />
+We **go** to school every day. 我们每天上学。<br />
+
+**3. 表语的位置** 在连系动词之后。如：<br />
+It's **fine** today. 今天天气很好。<br />
+
+**4. 宾语的位置** 在及物动词或介词之后。如：<br />
+I like this **place**. 我喜欢这个地方。（及物动词的宾语的位置）<br />
+There are many trees in this **place**. 这地方有许多树。（介词的宾语的位置）<br />
+
+**5. 定语的位置** 单词做定语，一般放在被修饰语的前面，短语和从句作定语则放在被修饰语的后面。如：<br />
+The school library has **many** books on **agriculture**. 校图书馆有许多关于农业的书。（many和agriculture，都修饰books，many在books前面， on agriculture则在它的后面）<br />
+
+**6. 状语的位置** 修饰形容词或副词的状语放在被修饰语之前；修饰动词的状语有的放在动词之前，有的放在动词之后。如动词有宾语，状语一般放在宾语之后。如：<br />
+The Summer Palace is **very** beautiful. 颐和园非常美丽。（very为状语，修饰形容词beautiful，放在beautiful之前）<br />
+I know him **well**. 我十分了解他。（well为状语，修饰动词know，放在know之后）<br />
+The students **often** go on a picnic. 这些学生经常出去野餐。（often为状语，修饰动词go，放在它的前面）<br />
+We take exercise **every day**. 我们每天都运动。（every day为状语，修饰动词take，在宾语exercise之后）<br />
+
+**7. 冠词的位置** 冠词在名词之前。如：<br />
+I met **a** friend at **the** bus-stop. 我在公共汽车站遇到一位朋友。<br />
+
+**8. 介词的位置** 介词一般也放在名词或代词之前。如：<br />
+There is a map **of** China **on** the wall. 墙上有一副中国地图。<br />
+
+**9. 连词的位置** 连词一般放在同类的词、短语或从句之间。如：<br />
+They worked quickly **and** efficiently. 他们工作速度快，效率高。<br />
+He works just as hard as everyone else **although** he is over sixty. 他尽管六十多岁了，仍和大家一样努力工作。<br />
+
+**10. 感叹词的位置** 感叹词常放在句子最前面。如：<br />
+**Oh**，it 's you! 啊，是你呀！<br />
