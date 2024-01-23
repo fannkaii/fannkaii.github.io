@@ -208,7 +208,7 @@ CONVERT() 函数可以用不同的格式显示日期/时间数据。
 | 101 |	mm/dd/yy |
 
 可以使用的 style 值：
-| StyleID | Style格式 |
+| Header1 | Header2 |
 |:--------|:--------|
 | 100 或者 0 | mon dd yyyy hh:miAM （或者 PM）|
 | 101 |	mm/dd/yy |
