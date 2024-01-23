@@ -50,7 +50,7 @@ tags:
 1. **主语** 它是句子所要说明的人或事物，是一句的主体。如I study English（我学习英语）中的I。
 2. **谓语动词** 它是说明主语动作或状态的，如I study English中的study。
 3. **表语** 它是放在连系动词之后表示主语的身份或特征的，如I am a student（我是一个学生）中的student；Our classroom is clean（我们的教室很干净）中的clean。
-4. **宾语** 它是表示及物动词动作的对象的，如I study English中的English。
+4. **宾语** 它是表示及物动词动作的对象的，如I study English中的English。<br />
 介词后面的名词或代词，叫做介词的宾语，如They don’t work on Sunday（他们星期天不工作）中的Sunday，就是介词on的宾语。
 5. **定语** 它是限定或修饰名词或代词用的，如He likes to drink cold milk（他喜欢喝冷牛奶）中的cold。
 6. **状语** 它是修饰动词、形容词、副词用的，如He works hard（他努力工作）中的hard。
@@ -63,27 +63,27 @@ tags:
 
 ## 词类和句子成分的关系
 在句子里，一定的句子成分由一定的词类来担任。现将哪些句子通常由哪些词类来担任列述如下：<br />
-**主语：名词和代词**
-**Beijing** is the capital of our country. 北京是我国的首都（名词Beijing作主语）
-**She** is fond of sports. 她爱好运动。（代词She作主语）
+**主语：名词和代词**<br />
+**Beijing** is the capital of our country. 北京是我国的首都（名词Beijing作主语）<br />
+**She** is fond of sports. 她爱好运动。（代词She作主语）<br />
 
-**谓语动词：动词**
-My brother **rides** his bicycle to work. 我哥哥骑自行车上班。（动词rides作谓语动词）
+**谓语动词：动词**<br />
+My brother **rides** his bicycle to work. 我哥哥骑自行车上班。（动词rides作谓语动词）<br />
 
-**表语：名词、代词和形容词**
-His father is a **doctor**. 他父亲是个医生。（名词doctor作表语）
-The lesson is **easy** and **short**. 这门课又容易又短。（形容词easy和short做表语）
-That classroom is **ours**. 那个教室是我们的。（代词ours作表语）
+**表语：名词、代词和形容词**<br />
+His father is a **doctor**. 他父亲是个医生。（名词doctor作表语）<br />
+The lesson is **easy** and **short**. 这门课又容易又短。（形容词easy和short做表语）<br />
+That classroom is **ours**. 那个教室是我们的。（代词ours作表语）<br />
 
-**宾语：名词和代词**
-I love **music**. 我热爱音乐。（名词music做宾语）
-The medicine is good for **her**. 这药对她有效。（代词her作宾语）
+**宾语：名词和代词**<br />
+I love **music**. 我热爱音乐。（名词music做宾语）<br />
+The medicine is good for **her**. 这药对她有效。（代词her作宾语）<br />
 
-**定语：形容词**
-Li Hong is an **excellent** teacher. 李红是一位好老师。（形容词excellent作定语）
+**定语：形容词**<br />
+Li Hong is an **excellent** teacher. 李红是一位好老师。（形容词excellent作定语）<br />
 
-**状语：副词**
-Our monitor does **well** in English. 我们班长英语学得好。（副词well作状语）
+**状语：副词**<br />
+Our monitor does **well** in English. 我们班长英语学得好。（副词well作状语）<br />
 
 
 ----------
