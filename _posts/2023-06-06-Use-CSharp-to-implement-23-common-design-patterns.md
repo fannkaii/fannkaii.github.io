@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "转：多线程详解"
+title: "转：使用c#实现23种常见的设计模式"
 author: "Kai"
 header-style: text
 tags:
