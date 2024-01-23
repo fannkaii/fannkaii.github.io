@@ -194,29 +194,42 @@ CONVERT() 函数可以用不同的格式显示日期/时间数据。
 - data_to_be_converted 含有需要转换的值。
 - style 规定日期/时间的输出格式。
 
-可以使用的 style 值：
-| Style ID | Style 格式 |
+| Header1 | Header2 |
+|:--------|:-------:|
+| cell1 | cell2 |
+| cell4 | cell5 |
+|---- 
+| cell1 | cell2 |
+| cell4 | cell5 |
+
+| Header1 | Header2 |
 |:--------|:--------|
 | 100 或者 0 | mon dd yyyy hh:miAM （或者 PM）|
-| 101 |	mm/dd/yy|
-| 102 |	yy.mm.dd|
-| 103 |	dd/mm/yy|
-| 104 |	dd.mm.yy|
-| 105 |	dd-mm-yy|
-| 106 |	dd mon yy|
-| 107 |	Mon dd, yy|
-| 108 |	hh:mm:ss|
-| 109 或者 9 |	mon dd yyyy hh:mi:ss:mmmAM（或者 PM）|
-| 110 |	mm-dd-yy|
-| 111 |	yy/mm/dd|
-| 112 |	yymmdd|
-| 113 或者 13 |	dd mon yyyy hh:mm:ss:mmm(24h)|
-| 114 |	hh:mi:ss:mmm(24h)|
-| 120 或者 20 | yyyy-mm-dd hh:mi:ss(24h)|
-| 121 或者 21 | yyyy-mm-dd hh:mi:ss.mmm(24h)|
-| 126 |	yyyy-mm-ddThh:mm:ss.mmm（没有空格）|
-| 130 |	dd mon yyyy hh:mi:ss:mmmAM|
-| 131 |	dd/mm/yy hh:mi:ss:mmmAM|
+| 101 |	mm/dd/yy |
+
+可以使用的 style 值：
+| StyleID | Style格式 |
+|:--------|:--------|
+| 100 或者 0 | mon dd yyyy hh:miAM （或者 PM）|
+| 101 |	mm/dd/yy |
+| 102 |	yy.mm.dd |
+| 103 |	dd/mm/yy |
+| 104 |	dd.mm.yy |
+| 105 |	dd-mm-yy |
+| 106 |	dd mon yy |
+| 107 |	Mon dd, yy |
+| 108 |	hh:mm:ss |
+| 109 或者 9 |	mon dd yyyy hh:mi:ss:mmmAM（或者 PM） |
+| 110 |	mm-dd-yy |
+| 111 |	yy/mm/dd |
+| 112 |	yymmdd |
+| 113 或者 13 |	dd mon yyyy hh:mm:ss:mmm(24h) |
+| 114 |	hh:mi:ss:mmm(24h) |
+| 120 或者 20 | yyyy-mm-dd hh:mi:ss(24h) |
+| 121 或者 21 | yyyy-mm-dd hh:mi:ss.mmm(24h) |
+| 126 |	yyyy-mm-ddThh:mm:ss.mmm（没有空格） |
+| 130 |	dd mon yyyy hh:mi:ss:mmmAM |
+| 131 |	dd/mm/yy hh:mi:ss:mmmAM |
 
 ```sql
 SELECT CONVERT(varchar(100), GETDATE(), 0)
