@@ -194,19 +194,6 @@ CONVERT() 函数可以用不同的格式显示日期/时间数据。
 - data_to_be_converted 含有需要转换的值。
 - style 规定日期/时间的输出格式。
 
-| Header1 | Header2 |
-|:--------|:-------:|
-| cell1 | cell2 |
-| cell4 | cell5 |
-|---- 
-| cell1 | cell2 |
-| cell4 | cell5 |
-
-| Header1 | Header2 |
-|:--------|:--------|
-| 100 或者 0 | mon dd yyyy hh:miAM （或者 PM）|
-| 101 |	mm/dd/yy |
-
 可以使用的 style 值：
 | Header1 | Header2 |
 |:--------|:--------|
@@ -219,6 +206,9 @@ CONVERT() 函数可以用不同的格式显示日期/时间数据。
 | 106 |	dd mon yy |
 | 107 |	Mon dd, yy |
 | 108 |	hh:mm:ss |
+
+| Header1 | Header2 |
+|:--------|:--------|
 | 109 或者 9 |	mon dd yyyy hh:mi:ss:mmmAM（或者 PM） |
 | 110 |	mm-dd-yy |
 | 111 |	yy/mm/dd |
