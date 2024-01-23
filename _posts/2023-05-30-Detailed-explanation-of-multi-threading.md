@@ -1039,6 +1039,7 @@ catch (AggregateException aex)
 - 包含了一个Cancel方法，Cancel方法如果被执行，IsCancellationRequested属性值马上更新成true
 - 线程内部判断IsCancellationRequested值，结束线程
 - 包含了一个Token属性，可以Register注册一个委托，创建Task的时候传入，线程结束后调用
+
 ```csharp
 //初始化一个CancellationTokenSource实例
 CancellationTokenSource source = new CancellationTokenSource();
