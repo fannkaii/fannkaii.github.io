@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "英语的几个基本语法概念"
+title: "慢SQL优化之旅"
 author: "Kai"
 header-style: text
 tags:
