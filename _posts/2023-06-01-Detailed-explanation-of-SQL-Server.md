@@ -15,7 +15,7 @@ tags:
 数据库是是按照数据结构来组织、存储和管理数据的仓库。---->存储和管理数据的仓库
 2. 数据库管理系统（Database Management System:DBMS）
 是专门用于管理数据库的计算机系统软件。数据库管理系统能够为数据库提供数据的定义、建立、维护、查询和统计等操作功能，并完成对数据完整性、安全性进行控制的功能。
-==注意：我们一般说的数据库，就是指的DBMS==
+**注意：我们一般说的数据库，就是指的DBMS**
 
 ## 1.2 数据库技术发展历程
 1. 层次数据库和网状数据库技术阶段
@@ -122,12 +122,12 @@ SSMS连接测试:
 ### 3.3.2 PD生成SQL脚本
 建议先画E-R图，再生成数据库
 
-==创建项目，填写项目名称，选择保存目录==
+**创建项目，填写项目名称，选择保存目录**
 ![20240125173950](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125173950.png)
 
 ![20240125174001](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174001.png)
 
-==创建模型文件:==
+**创建模型文件:**
 ![20240125174011](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174011.png)
 
 ![20240125174022](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174022.png)
@@ -136,27 +136,27 @@ SSMS连接测试:
 
 ![20240125174046](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174046.png)
 
-==创建表，添加字段:==
+**创建表，添加字段:**
 ![20240125174057](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174057.png)
 
 可以显示字段说明
 ![20240125174108](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174108.png)
 
-==生成物理数据模型：==
+**生成物理数据模型：**
 ![20240125174121](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174121.png)
 ![20240125174133](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174133.png)
 ![20240125174148](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174148.png)
 
-==生成SQL脚本==
+**生成SQL脚本**
 ![20240125174201](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174201.png)
 ![20240125174213](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174213.png)
 
 ### 3.3.3 PD从数据库生成模型
-==创建模型，选择数据库类型==
+**创建模型，选择数据库类型**
 ![20240125174224](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174224.png)
 ![20240125174237](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174237.png)
 
-==配置数据库连接导出模型==
+**配置数据库连接导出模型**
 ![20240125174248](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174248.png)
 ![20240125174258](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174258.png)
 ![20240125174308](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174308.png)
@@ -164,6 +164,7 @@ SSMS连接测试:
 ![20240125174327](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174327.png)
 
 ### 3.3.4 PD数据类型说明
+
 |Standard data type | DBMS-specific physical data type | Content | Length|
 | ------------ | ------------ | ------------ | ------------ |
 | Integer | int / INTEGER | 32-bit integer | — |
@@ -423,7 +424,7 @@ bit 称为位数据类型，只取0或1为值，长度1字节。bit值经常当�
 - max_size:指定文件可增大的最大大小。可使用KB、MB、GB和TB做后缀，默认值为MB。max_size是整数值.如果不指定max_size,则文件将不断增长直至磁盘被占满。UNLIMITED表示文件一直增长到磁盘装满。
 - filegrowth:指定文件的自动增量。文件的filegrowth设置不能超过MAXSIZE设置。该值可以 MB、KB、GB、TB或百分比（%）为单位指定，默认值为MB，如果指定%，则增量大小为发生增长时文件大小的的指定百分比。值为0表明自动增长被设为关闭，不允许增加空间。
 
-==创建一个数据库sample_db,该数据库的主数据文件逻辑名为sample_db，物理文件名称为sample_db.mdf,初始大小为5MB，最大尺寸为30MB，增长速度为5%；数据库日志文件的逻辑名称为sample_log,保存日志文件的物理名称为sample_log.ldf，初始大小为1MB，最大尺寸为8MB，增长速度为10%==
+**创建一个数据库sample_db,该数据库的主数据文件逻辑名为sample_db，物理文件名称为sample_db.mdf,初始大小为5MB，最大尺寸为30MB，增长速度为5%；数据库日志文件的逻辑名称为sample_log,保存日志文件的物理名称为sample_log.ldf，初始大小为1MB，最大尺寸为8MB，增长速度为10%**
 ```sql
 create database[sample_db] on primary
 (
@@ -472,7 +473,7 @@ alter database database_name
 - remove file logical_file_name:从SQL Server的实例中删除逻辑文件并删除物理文件。除非文件为空，否则无法删除文件。logical_file_name是在Sql Server 中引用文件时所用的逻辑名称。
 - modify file:指定应修改的文件，一次只能更改一个属性。必须在中指定name,以标识要修改的文件。如果指定了size，那么新大小必须比文件当前大小要大。
 
-==将sample_db数据库中的主数据文件的初始大小修改为15MB==
+**将sample_db数据库中的主数据文件的初始大小修改为15MB**
 ```sql
 alter database sample_db
   modify file
@@ -554,13 +555,13 @@ ALTER TABLE StudentTB ADD CONSTRAINT default_Name DEFAULT('HAHAHA') FOR Name
 ALTER TABLE StudentTB ADD CONSTRAINT more_than_12 CHECK(Age < 12);
 ```
 ### 5.2.9 主键、外键
-==主键==
+**主键**
 - 标识了数据库中某一表中某一条数据的唯一性。
 - 数字主键：自增主键（标识列），新增数据，数据库自动完成主键的递增；优势：默认会有聚集索引，按照区间查询性能高； 根据主键查询数性能高；劣势：就是害怕数据迁移。
 - 联合主键：表中的多个字段联合起来，确定当前这条数据的唯一性，不推荐
 - Guid主键：全球唯一的一个字符串；优势：方便数据迁移；劣势：性能会稍微差一些，无法作为聚集索引；
 
-==外键==
+**外键**
 - 关系的描述：一个表中的字段对应着另外一个表中的主键，就是外键
 - 物理约束：如果外键的主表中不存在这条数据，外键所在表中的数据是无法插入的
 - 级联删除：需要设置，可以做到删除外键的主表数据，可以把从表中的对应数据自动全部删掉
@@ -948,7 +949,7 @@ select * from stud;--列重命名
 ```
 
 ### 9.1.5 自定义存储过程
-==创建无参的存储过程==
+**创建无参的存储过程**
 ```sql
 if (exists (select * from sys.objects where name = 'PROC_XXX'))
     drop proc PROC_XXX
@@ -958,29 +959,29 @@ as
     select * from 表名
 ```
 
-==修改指定存储过程的内容==
+**修改指定存储过程的内容**
 ```sql
 alter proc PROC_XXX
 as
   select * from 表名 where 条件
 ```
 
-==删除存储过程==
+**删除存储过程**
 ```sql
 drop proc PROC_XXX;
 ```
 
-==重命名存储过程(调用系统自带的存储过程来实现)==
+**重命名存储过程(调用系统自带的存储过程来实现)**
 ```sql
 sp_rename PROC_XXX,PROC_YYY;
 ```
 
-==调用无参存储过程==
+**调用无参存储过程**
 ```sql
 exec PROC_XXX;
 ```
 
-==创建带参数返回值的存储过程==
+**创建带参数返回值的存储过程**
 ```sql
 if (exists (select * from sys.objects where name = 'GetMsg'))
     drop proc GetMsg
@@ -1007,7 +1008,7 @@ select @myUserName as '姓名',@myCount as '总条数';
 --select @myUserName,@myCount
 ```
 
-==创建带通配符的存储过程==
+**创建带通配符的存储过程**
 ```sql
 if (exists (select * from sys.objects where name = 'GetInfor'))
     drop proc GetInfor
@@ -1042,19 +1043,19 @@ exec GetInfor '_p%';  --userName p为第二个字符,p前有一个字符，p后�
 ### 9.2.4 索引分类
 SQL Server中的索引有两种：聚集索引和非聚集索引，它们的区别是在物理数据的存储方式上。
 
-==聚集索引==
+**聚集索引**
 - 聚集索引基于数据行的键值，在表内排序和存储这些数据行。
 - 每张表只能有一个聚集索引，因为数据行本身只能按一个顺序存储。
 - 表中的物理顺序和索引中行的物理顺序是相同的，创建任何非聚集索引之前要先创建聚集索引，这是因为非聚集索引改变了表中行的物理顺序。
 - 关键值的唯一性使用UNIQUE关键字或者由内部的唯一标识符明确维护。
 - 在索引的创建过程中，SQL Server临时使用当前数据库的磁盘空间，所以要保证有足够的空间创建索引。
 
-==非聚集索引==
+**非聚集索引**
 - 非聚集索引具有完全独立于数据行的结构。使用非聚集索引不用将物理数据页中的数据按列排序，非聚集索引包含索引键值和指向表数据存储位置的行定位器。
 - 可以对表或索引视图创建多个非聚集索引。通常，设计非聚集索引是为了改善经常使用的、没有建立聚集索引的查询的性能。
 - 查询优化器在搜索数据值时，先搜索非聚集索引以找到数据值在表中的位置，然后直接从该位置检索数据。这使得非聚集索引成为完全匹配查询的最佳选择，因为索引中包含搜索的数据值在表中的精确位置的项。
 
-==考虑使用非聚集索引的情况==
+**考虑使用非聚集索引的情况**
 - 使用JOIN或者GROUP BY子句，应为连接和分组操作中所涉及的列创建多个非聚集索引,为任何外键创建一个聚集索引。
 - 包含大量唯一值的字段。
 - 不返回大型结果集的查询,创建筛选索引以覆盖从大型表中返回定义完善的的行子集的查询。
@@ -1093,32 +1094,32 @@ CREATE [UNIQUE] [CLUSTERED|NONCLUSTERRED] INDEX 索引名 ON {table名|view名}(
 - 可以跟踪状态，撤销违法操作，保证数据的准确性。
 
 ### 9.3.3 触发器的分类
-==触发器通常分为三类==
+**触发器通常分为三类**
 - DML（ 数据库操作语言）触发器：insert触发器、delete触发器、update触发器。
 - DDL（ 数据库定义语言）触发器：以create，drop，alter开头的语句)事件时被激活使用，使用DDL触发器可以防止对数据架构进行的某些更改或记录数据中的更改或事件操作。
 - 登录触发器：登录触发器将为响应 LOGIN 事件而激发存储过程。
 
-==根据触发器执行顺序分类==
+**根据触发器执行顺序分类**
 - for/after：仅在触发SQL语句中指定的所有操作都已成功执行完后才被触发。
 - instead of：触发SQL语句并不实际执行，走完instead of触发器的内容就结束。
 
 ### 9.3.4 工作原理
-==从临时表的角度分析==
+**从临时表的角度分析**
 - 触发器触发的时候，会在内存中新建 inserted表 和 deleted表，这两张表是只读的，不允许修改，触发器执行完，这两张表自动删除。
 - inserted表：存放插入的记录行和更新后的记录行。可以从该表中检查插入 插入或更新的数据是否符合要求，从而决定是否回滚。
 - deleted表：存放删除的记录行和更新前的记录行。可以从该表中检查删除的数据是否符合要求，从而决定是否回滚。
 
-==从执行流程的角度分析==
+**从执行流程的角度分析**
 - 对于after/for类型的触发器： 执行增/删/改SQL，执行完毕且生效于DB → 触发对应触发器 → 生成inserted表和deleted表，并插入对应的数据 → 走触发器内部的自己写的业务代码（这里主要对要执行的sql语句，进行一些限制，根据inserted和deleted表查询对应的数据，从而决定回滚、抛异常、还是放行） → 执行完毕。
 - 对于instead of 类型的触发器：执行增/删/改SQL，并未生效于DB→ 触发对应触发器 → 生成inserted表和deleted表，并插入对应的数据 →走触发器内部自己写的业务代码 → 执行完毕。（全程触发触发器的SQL并没有真的生效）
 
-==从三种实际触发器插入临时表的角度分析==
+**从三种实际触发器插入临时表的角度分析**
 - insert触发器： 向inserted表中插入新行备份。
 - delete触发器：向deleted表中插入被删除行备份。
 - update触发器：向deleted表中插入更新前的记录行备份，向inserted表中插入更新后的记录行备份。
 
 ### 9.3.5 管理触发器
-==查看相关触发器==
+**查看相关触发器**
 ```sql
 --1. 查看数据库中所有的触发器
 select * from sysobjects where xtype='TR';
@@ -1128,7 +1129,7 @@ exec sp_helptext 'trig_del1';
 exec sp_helptrigger UserInfor
 ```
 
-==启用和禁用触发器==
+**启用和禁用触发器**
 ```sql
 -- 启用UserInfor表上的触发器
 alter table UserInfor enable trigger insert_forbidden20;
@@ -1140,7 +1141,7 @@ alter table UserInfor disable trigger insert_forbidden20;
 alter table UserInfor disable trigger ALL;
 ```
 
-==修改触发器==
+**修改触发器**
 ```sql
 -- 把触发器的内容改为删除的时候显示删除的数据了
 alter trigger trig_Notdel
@@ -1152,13 +1153,13 @@ begin
 end;
 ```
 
-==删除触发器==
+**删除触发器**
 ```sql
 --删除下面两个触发器
 drop trigger insert_forbidden20,trig_del1;
 ```
 
-==创建触发器==
+**创建触发器**
 ```sql
 create trigger trig_Notdel
 on RoleInfor
@@ -1188,7 +1189,7 @@ end;
 - 视图的创建和删除只影响视图，不影响其对应的表结构。
 
 ### 9.4.5 视图管理
-==创建视图==
+**创建视图**
 ```sql
 if (exists (select * from sys.objects where name='UserInfor_View'))
     drop view UserInfor_View
@@ -1200,7 +1201,7 @@ select id,userAge from UserInfor where userAge >=20;
 select * from UserInfor_View;
 ```
 
-==查看视图==
+**查看视图**
 ```sql
 -- 使用sp_help存储过程查看视图的定义信息
 exec sp_help 'UserInfor_View';
@@ -1208,14 +1209,14 @@ exec sp_help 'UserInfor_View';
 exec sp_helptext 'UserInfor_View';
 ```
 
-==修改视图==
+**修改视图**
 ```sql
 alter view UserInfor_View
 as
 select id,userAge from UserInfor where userAge >=10;
 ```
 
-==删除视图==
+**删除视图**
 ```sql
 drop view UserInfor_View;
 ```
@@ -1277,12 +1278,12 @@ drop view UserInfor_View;
 
 ## 10.6 复制模式之快照发布实操
 ### 10.6.1 数据库服务器配置
-==配置服务器可以远程访问==
+**配置服务器可以远程访问**
 ![20240125174420](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174420.png)
 ![20240125174431](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174431.png)
 ![20240125174442](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174442.png)
 
-==创建一个写主库，两个读库，数据表==
+**创建一个写主库，两个读库，数据表**
 ![20240125174452](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174452.png)
 ```sql
 USE [DbTestWrite]
@@ -1303,7 +1304,7 @@ CREATE TABLE [dbo].[User](
 GO
 ```
 
-==创建快照文件夹共享==
+**创建快照文件夹共享**
 ![20240125174508](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125174508.png)
 
 ### 10.6.2 配置分发服务器
@@ -1471,7 +1472,7 @@ COMMIT TRANSACTION
 ![20240125175536](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125175536.png)
 
 ### 11.3.5 代码实现
-==添加文件组==
+**添加文件组**
 代码格式：
 ```sql
 ALTER DATABASE <数据库名称> ADD FILEGROUP<文件组名>
@@ -1482,7 +1483,7 @@ ALTER DATABASE <数据库名称> ADD FILEGROUP<文件组名>
 ALTER DATABASE DemoADD FILEGROUP DemoFileGroup
 ```
 
-==添加文件==
+**添加文件**
 代码格式：
 ```sql
 ALTER DATABASE <数据库名称> ADD FILE < 数据标识> TO FILEGROUP<文件组名称>
@@ -1499,7 +1500,7 @@ ALTER DATABASE TestDb ADD FILE (
 TO FILEGROUP TestFileGroup
 ```
 
-==定义分区函数==
+**定义分区函数**
 分区函数是用于判定数据行该属于哪个分区,通过分区函数中设置边界值来使得根据行中特定列的值来确定其分区。
 代码格式：
 ```sql
@@ -1523,7 +1524,7 @@ FORVALUES('2018-01-01 00:00:00','2019-01-01 00:00:00')
 SELECT * FROM sys.partition_functions
 ```
 
-==定义分区架构==
+**定义分区架构**
 定义完分区函数仅仅是知道了如何将列的值区分到了不同的分区，而每个分区的存储方式，则需要分区构架来定义。分区构架仅仅是依赖分区函数.分区构架中负责分配每个区属于哪个文件组，而分区函数是决定如何在逻辑上分区。
 代码格式：
 ```sql
@@ -1544,7 +1545,7 @@ TO (TestFileGroup,[PRIMARY],TestFileGroup)
 SELECT *FROM sys.partition_schemes
 ```
 
-==定义分区表==
+**定义分区表**
 表在创建的时候就已经决定是否是分区表了。虽然在很多情况下都是你在发现已经表已经足够大的时候才想到要把表分区，但是分区表只能够在创建的时候指定为分区表。
 代码格式：
 ```sql
@@ -1606,48 +1607,48 @@ dbcc flushprocindb（db_id）
 ```
 
 ### 12.3.2 查看执行计划信息
-==查看预估执行计划==
+**查看预估执行计划**
 ![20240125175613](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125175613.png)
 
 **连线越粗表示扫描影响的行数愈多，性能越差。**
 ![20240125175631](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240125175631.png)
 
 ### 12.3.3 常见场景
-==Table Scan（表扫描）==
+**Table Scan（表扫描）**
 当表中没有聚集索引，又没有合适索引的情况下，会出现这个操作。这个操作是很耗性能的，他的出现也意味着优化器要遍历整张表去查找你所需要的数据。
 
-==Clustered Index Scan(聚集索引扫描)、Index Scan（非聚集索引扫描）==
+**Clustered Index Scan(聚集索引扫描)、Index Scan（非聚集索引扫描）**
 - 聚集索引扫描：聚集索引的数据体积实际是就是表本身，也就是说表有多少行多少列，聚集索引就有多少行多少列，那么聚集索引扫描就跟表扫描差不多，也要进行全表扫描，遍历所有表数据，查找出你想要的数据。
 - 非聚集索引扫描：非聚集索引的体积是根据你的索引创建情况而定的，可以只包含你要查询的列。那么进行非聚集索引扫描，便是你非聚集中包含的列的所有行进行遍历，查找出你想要的数据。
 - 建议大家在Sql语句查询的时候，尽量不要使用* 查询。
 
-==Key Lookup(键值查找)==
+**Key Lookup(键值查找)**
 查找与扫描在性能上完全不是一个级别的，扫描需要遍历整张表，而查找只需要通过键值直接提取数据，返回结果，性能要好。当你查找的列没有完全被非聚集索引包含，就需要使用键值查找在聚集索引上查找非聚集索引不包含的列。
 
-==RID Lookoup（RID查找)==
+**RID Lookoup（RID查找)**
 跟键值查找类似，只不过RID查找，是需要查找的列没有完全被非聚集索引包含，而剩余的列所在的表又不存在聚集索引，不能键值查找，只能根据行表示Rid来查询数据。
 
-==Clustered Index Seek（聚集索引查找）、Index Seek（非聚集索引查找）==
+**Clustered Index Seek（聚集索引查找）、Index Seek（非聚集索引查找）**
 - 聚集索引查找：聚集索引包含整个表的数据，也就是在聚集索引的数据上根据键值取数据。
 - 非聚集索引查找：非聚集索引包含创建索引时所包含列的数据，在这些非聚集索引的数据上根据键值取数据。
 
-==Hash Match==
+**Hash Match**
 表关联或者数据聚合运算时会用到。
 - Hashing：在数据库中根据每一行的数据内容，转换成唯一符号格式，存放到临时哈希表中，当需要原始数据时，可以给还原回来。类似加密解密技术，但是他能更有效的支持数据查询。
 - Hash Table：通过hashing处理，把数据以key/value的形式存储在表格中，在数据库中他被放在tempdb中。
 - 建议：把关联的字段加上索引
 
-==Nested Loops==
+**Nested Loops**
 把两个不同列的数据集汇总到一张表中。提示信息中的Output List中有两个数据集，下面的数据集（inner set）会一一扫描与上面的数据集（out set），扫描完为止，这个操作才算是完成。
 
-==Merge Join==
+**Merge Join**
 这种关联算法是对两个已经排过序的集合进行合并。如果两个聚合是无序的则将先给集合排序再进行一一合并，由于是排过序的集合，左右两个集合自上而下合并效率是相当快的。
 
-==Sort（排序）==
+**Sort（排序）**
 对数据集合进行排序，需要注意的是，有些数据集合在索引扫描后是自带排序的。
 
-==Filter（筛选)==
+**Filter（筛选)**
 根据出现在having之后的操作运算符，进行筛选
 
-==Computer Scalar==
+**Computer Scalar**
 在需要查询的列中需要自定义列，比如count（*） as cnt ，select name+''+age 等会出现此符号。
