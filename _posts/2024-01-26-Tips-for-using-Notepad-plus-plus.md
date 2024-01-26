@@ -38,6 +38,7 @@ Replace with 文本框中怎么引用通过Find What文本框的正则找到的�
 
 ## NotePad++ 正则表达式替换 高级用法
 转自：<http://www.pnotepad.org/docs/search/regular_expressions/>
+
 在我们处理文件时，很多时候会用到查找与替换。当我们想将文件中某一部分替换替换文件中另一部分时，怎么办呢？ 下面正则表达式 给我提供方法。
 
 正则表达式，提供复杂 并且弹性的查找与替换
@@ -54,10 +55,10 @@ Replace with 文本框中怎么引用通过Find What文本框的正则找到的�
 | `[^…]` | 表示字符补集. 例如, `[^A-Za-z]` 表示任意字符除了字母表。 |
 | `^` | 匹配一行的开始(除非在集合中, 如下). |
 | `$` | 匹配行尾. |
-| `*` | 匹配0或多次, 例如 Sa*m 匹配 Sm, Sam, Saam, Saaam 等等. |
-| `+` | 匹配1次或多次,例如 Sa+m 匹配 Sam, Saam, Saaam 等等. |
-| `?` | 匹配0或者1次, 例如 Sa?m 匹配 Sm, Sam. |
-| `{n}` | 匹配确定的 n 次.例如, ‘Sa{2}m’ 匹配 Saam. |
+| `*` | 匹配0或多次, 例如 `Sa*m` 匹配 Sm, Sam, Saam, Saaam 等等. |
+| `+` | 匹配1次或多次,例如 `Sa+m` 匹配 Sam, Saam, Saaam 等等. |
+| `?` | 匹配0或者1次, 例如 `Sa?m` 匹配 Sm, Sam. |
+| `{n}` | 匹配确定的 n 次.例如, `Sa{2}m` 匹配 Saam. |
 | `{m,n}` | 匹配至少m次，至多n次(如果n缺失，则任意次数).例如, `Sa{2,3}m` 匹配 Saam or Saaam. `Sa{2,}m` 与 `Saa+m` 相同 |
 | `*?, +?, ??, {n,m}?` | 非贪心匹配，匹配第一个有效的匹配，通常 `<.>` 会匹配整个 `content` 字符串 –- 但 `<.?>` 只匹配`''` .这个标记一个标签区域，这些区域可以用语法\1 \2 等访问多个对应1-9区域。 |
 
@@ -87,8 +88,8 @@ Replace with 文本框中怎么引用通过Find What文本框的正则找到的�
 | `\D` | 匹配非数字字符 |
 | `\b` | 匹配单词边界. `\bW\w+` 找到W开头的单词 |
 | `\B` | 匹配非单词边界. `\Be\B+` – 找到位于单子中间的字母’e’ |
-| `\<` | This matches the start of a word using Scintilla’s definitions of words. |
-| `\>` | This matches the end of a word using Scintilla’s definition of words. |
+| `\<` | 这与使用 Scintilla 的单词定义的单词开头相匹配。 |
+| `\>` | 这与使用 Scintilla 的单词定义的单词结尾相匹配。 |
 | `\x` | 运行用x来表达可能具有其他意思的字符。例如, [ 用来插入到文本中作为[ 而不是作为字符集的开始. |
 
 ### 4. 字符类
@@ -103,7 +104,7 @@ Replace with 文本框中怎么引用通过Find What文本框的正则找到的�
 | `[[:upper:]]` | 匹配大写字符: `[A-Z]` |
 | `[[:blank:]]` | 匹配空白 (空格 or tab): `[ \t]` |
 | `[[:space:]]` | 匹配空白字符: `[ \t\r\n\v\f]` |
-| `[[:punct:]]` | 匹配标点字符: `[-!"#$%&'()*+,./:;<=>?@[\]_``` |
+| `[[:punct:]]` | 匹配标点字符: `[-!"#$%&'()*+,./:;<=>?@[\]_`` |
 | `[[:graph:]]` | 匹配图形字符: `[\x21-\x7E]` |
 | `[[:print:]]` | 匹配可打印的字符 (graphical characters and spaces) |
 | `[[:cntrl:]]` | 匹配控制字符 |
@@ -111,6 +112,7 @@ Replace with 文本框中怎么引用通过Find What文本框的正则找到的�
 ### 5. 替换操作
 使用正则表达式的标记，通过（）来包围想要用的字符，然后用\1 来替换字符串，第一个匹配文本。
 例如:
+
 | Text body | Search string | Replace string | Result |
 | --- | --- | --- | --- |
 | Hi my name is Fred | my name is (.+) | my name is not \1 | Hi my name is not Fred |
