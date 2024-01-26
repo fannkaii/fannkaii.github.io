@@ -51,12 +51,9 @@ plugins: [jekyll-paginate]
 # markdown: redcarpet kramdown
 markdown: kramdown
 kramdown:
-  #input: GFM # use Github Flavored Markdown !important
+  input: GFM # use Github Flavored Markdown !important
   syntax_highlighter_opts:
     disable: true
-  input: GFM
-  auto_ids: true
-  parse_block_html: true
   #  span:
   #    line_numbers: false
   #  block:
