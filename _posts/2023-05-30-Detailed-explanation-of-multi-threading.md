@@ -1590,7 +1590,7 @@ private async Task NoReturnTaskAsyncAwait()
         Thread.Sleep(3000);
         Debug.WriteLine($"Task.Run--NoReturnTaskAsyncAwait--{Thread.CurrentThread.ManagedThreadId.ToString("00")}--{DateTime.Now.ToString("HH:mm:ss.fff")}");
     });
-    await task;
+    return task;
     Debug.WriteLine($"NoReturnTaskAsyncAwait--End--{Thread.CurrentThread.ManagedThreadId.ToString("00")}--{DateTime.Now.ToString("HH:mm:ss.fff")}");
 }
 ```
