@@ -92,6 +92,7 @@ async Task  DoAsync()
 }
 ```
 再次启动程序后，我们发现又切换成了线程池调度了。为什么会这样呢？其实很好理解，由于原来返回void的Run方法被替换成了返回Task的RunAsync，传入StartNew方法表示执行操作的委托类型从Action切换成了Func<Task>，虽然我们指定了LongRunning选项，但是StartNew方法只是采用这种模式执行Func<Task>这个委托对象而已，而这个委托在遇到await的时候就返回了。至于返回的Task对象，还是按照默认的方式进行调度执行。
+
 ![20240131172320](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240131172320.png)
 
 # 4. 换种写法呢？
