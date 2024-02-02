@@ -1575,7 +1575,7 @@ NoReturnAsyncAwait--End--01--13:40:14.034
 ```
 
 ### 7.2.3 返回Task，有Async，有Await
-async Task == async void,Task和Task能够使用await, Task.WhenAny, Task.WhenAll等方式组合使用。Async Void 不行
+async Task == async void, 返回Task的方法在被调用时才能够使用await, 以及Task.WhenAny、Task.WhenAll等方式组合使用。Async Void 不行
 方法:
 ```csharp
 /// <summary>
@@ -1703,7 +1703,7 @@ ReturnTaskAsyncAwaits--Start--01--14:38:13.806
 ```csharp
 private async Task<long> CalculationAsync(long total)
 {
-    var task = await Task.Run(() =>
+    var result = await Task.Run(() =>
     {
         Debug.WriteLine($"This is CalculationAsync Start,ThreadId={Thread.CurrentThread.ManagedThreadId}");
         long lResult = 0;
@@ -1716,7 +1716,7 @@ private async Task<long> CalculationAsync(long total)
         return lResult;
     });
 
-    return task; //这句话必须由主线程来执行，线程在同一时刻只能做一件事儿
+    return result; //这句话必须由主线程来执行，线程在同一时刻只能做一件事儿
 }
 ```
 
@@ -1727,7 +1727,7 @@ private async Task<long> CalculationAsync(long total)
 /// </summary>
 private async Task TextAsyncResultChange()
 {
-    Debug.WriteLine($"TextAsyncResultChange--End--{Thread.CurrentThread.ManagedThreadId.ToString("00")}--{DateTime.Now.ToString("HH:mm:ss.fff")}");
+    Debug.WriteLine($"TextAsyncResultChange--Begin--{Thread.CurrentThread.ManagedThreadId.ToString("00")}--{DateTime.Now.ToString("HH:mm:ss.fff")}");
     long lResult = await this.CalculationAsync(1_000_000);
     //更改控件的值，必须是(UI线程)主线程去执行；这跟Winform设计有关系，在Winform中，await后面的内容，都会让主线程来执行
     this.textAsyncResult.Text = lResult.ToString();
@@ -1738,7 +1738,7 @@ private async Task TextAsyncResultChange()
 运行结果:
 ```
 btnAwaitAsync_Click--Start--01--15:31:16.624
-TextAsyncResultChange--End--01--15:31:16.636
+TextAsyncResultChange--Begin--01--15:31:16.636
 This is CalculationAsync Start,ThreadId=6
 btnAwaitAsync_Click--End--01--15:31:16.735
 This is CalculationAsync   End,ThreadId=6
