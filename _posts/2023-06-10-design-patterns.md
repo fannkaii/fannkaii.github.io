@@ -207,6 +207,7 @@ public class Example {
 ```
 
 **利用接口类来实现多态特性。**
+
 ```java
 public interface Iterator {
   boolean hasNext();
