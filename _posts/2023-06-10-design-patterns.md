@@ -151,6 +151,7 @@ public class PictureStorage implements IPictureStorage {
 - 第一个语法机制是编程语言要支持父类对象可以引用子类对象。
 - 第二个语法机制是编程语言要支持继承。
 - 第三个语法机制是编程语言要支持子类可以重写（override）父类中的方法。
+
 ```java
 public class DynamicArray {
   private static final int DEFAULT_CAPACITY = 10;
