@@ -34,18 +34,18 @@ MIME 把数据分成了八大类，每个大类下再细分出多个子 类，�
 HTTP 协议定义了两个 **Accept** 请求头字段和两个 **Content** 实体头字段，用于客户端和服务器进行“内容协商”。客户端用 **Accept** 头告诉服务器希望接收什么样的数据，而服务器用 **Content** 头告诉客户端实际发送了什么样的数据。
 ![20240205115759](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240205115759.png)
 **Accept** 字段标记的是客户端可理解的 MIME type，可以用“,”做分隔符列出多个类型，让服务器有更多的选择余地，例如下面的这个头，这就是告诉服务器：“我能够看懂 HTML、XML 的文本， 还有 webp 和 png 的图片，请给我这四类格式的数据”。
-```
+```http
 Accept: text/html,application/xml,image/webp,image/png
 ```
 相应的，服务器会在响应报文里用头字段Content-Type告诉实体数据的真实类型，浏览器看到类型是“text/html”就知道是 HTML 文件，会调用排版引擎渲染出页面，看到“image/png”就知道是一个 PNG 文件，就会在页面上显示出图像。
-```
+```http
 Content-Type: text/html
 Content-Type: image/png
 ```
 
 ### 3.1.4 编码的头字段Accept-Encoding&Content-Encoding
 Accept-Encoding字段标记的是客户端支持的压缩格式， 例如上面说的 gzip、deflate 等，同样也可以用“,”列出多个，服务器可以选择其中一种来压缩数据，实际使用的压缩格式放在响应头字段Content-Encoding里。
-```
+```http
 Accept-Encoding: gzip, deflate, br
 Content-Encoding: gzip
 ```
@@ -65,17 +65,17 @@ Content-Encoding: gzip
 
 ### 3.1.7 语言类型的头字段Accept-Language&Content-Language
 **Accept-Language**字段标记了客户端可理解的自然语言，也允许用“,”做分隔符列出多个类型，如下，这个请求头会告诉服务器：“最好给我 zh-CN 的汉语文字，如果没有就用其他的汉语方言，如果还没有就给英文”。
-```
+```http
 Accept-Language: zh-CN, zh, en
 ```
 相应的，服务器应该在响应报文里用头字段**Content-Language**告诉客户端实体数据使用的实际语言类型：
-```
+```http
 Content-Language: zh-CN
 ```
 
 ### 3.1.8 字符集的头字段Accept-Charset&Content-Type
 字符集在HTTP里使用的请求头字段是**Accept-Charset**，但响应头里却没有对应的 **Content-Charset**，而是在Content-Type字段的数据类型后面用“**charset=xxx**”来表示，这点需要特别注意。
-```
+```http
 Accept-Charset: gbk, utf-8
 Content-Type: text/html; charset=utf-8
 ```
@@ -92,13 +92,13 @@ Content-Type: text/html; charset=utf-8
 这里要提醒的是“;”的用法，在大多数编程语言里“;”的断句语气要强于“,”，而在 HTTP 的内容协商里却恰好反了过来，“;”的意义是小于“,”的。
 
 例如下面的 Accept 字段，它表示浏览器最希望使用的是 HTML 文件，权重是 1，其次是 XML 文件，权重是 0.9，最后是任意数据类型，权重是 0.8。服务器收到请求头后，就会计算权重，再根据自己的实际情况优先输出 HTML 或者 XML。
-```
+```http
 Accept: text/html,application/xml;q=0.9,*/*;q=0.8
 ```
 
 ### 3.1.10 内容协商的结果
 内容协商的过程是不透明的，每个 Web 服务器使用的算法都不一样。但有的时候，服务器会在响应头里多加一个**Vary**字段，记录服务器在内容协商时参考的请求头字段，给出一点信息，如下，这个 Vary 字段表示服务器依据了 Accept-Encoding、User-Agent 和 Accept 这三个头字段，然后决定了发回的响应报文
-```
+```http
 Vary: Accept-Encoding,User-Agent,Accept
 ```
 Vary 字段可以认为是响应报文的一个特殊的“版本标记”。每当 Accept 等请求头变化时，Vary 也会随着响应报文一起变化。也就是说，同一个 URI 可能会有多个不同的“版本”，主要用在传输链路中间的代理服务器实现缓存服务，这个之后讲“HTTP 缓存”时还会再提到。
@@ -149,13 +149,13 @@ Range 的格式也很灵活，起点 x 和终点 y 可以省略，能够很方�
 - 最后剩下的就是发送数据了，直接把片段用 TCP 发给客户端，一个范围请求就算是处理完了。
 
 例如下面的这个请求使用 Range 字段获取了文件的前 32个字节：
-```
+```http
 GET /16-2 HTTP/1.1
 Host: www.chrono.com
 Range: bytes=0-31
 ```
 返回的数据是（去掉了几个无关字段）：
-```
+```http
 HTTP/1.1 206 Partial Content
 Content-Length: 32
 Accept-Ranges: bytes
@@ -522,9 +522,8 @@ SSL 发展到 v3 时已经证明了它自身是一个非常好的安全通信协
 TLS 由记录协议、握手协议、警告协议、变更密码规范协议、扩展协议等几个子协议组成，综合使用了对称加密、非对称加密、身份认证等许多密码学前沿技术。
 
 浏览器和服务器在使用 TLS 建立连接时需要选择一组恰当的加密算法来实现安全通信，这些算法的组合被称为“密码套件”（cipher suite，也叫加密套件）。
-```
+
 TLS 的密码套件命名非常规范，格式很固定。基本的形式是“密钥交换算法 + 签名算法 + 对称加密算法 + 摘要算法”，比如ECDHE-RSA-AES256-GCM-SHA384的意思就是：“握手时使用 ECDHE 算法进行密钥交换，用 RSA 签名和身份认证，握手后的通信使用AES 对称算法，密钥长度 256 位，分组模式是 GCM，摘要算法 SHA384 用于消息认证和产生随机数。”
-```
 
 ### 4.1.5 OpenSSL
 OpenSSL，它是一个著名的开源密码学程序库和工具包，几乎支持所有公开的加密算法和协议，已经成为了事实上的标准，许多应用软件都会使用它作为底层库来实现 TLS 功能，包括常用的 Web 服务器 Apache、Nginx 等。
@@ -596,7 +595,7 @@ ECC 名字里的“椭圆”经常会引起误解，其实它的曲线并不是�
 虽然非对称加密没有“密钥交换”的问题，但因为它们都是基于复杂的数学难题，运算速度很慢，即使是 ECC 也要比 AES 差上好几个数量级。如果仅用非对称加密，虽然保证了安全，但通信速度有如乌龟、蜗牛，实用性就变成了零。
 
 对比了 AES 和 RSA 这两种算法的性能，下面列出了一次测试的结果：
-```
+```bash
 aes_128_cbc enc/dec 1000 times : 0.97ms, 13.11MB/s
 rsa_1024 enc/dec 1000 times : 138.59ms, 93.80KB/s
 rsa_1024/aes ratio = 143.17
@@ -714,7 +713,7 @@ TLS 包含几个子协议，你也可以理解为它是由几个不同职责的�
 ![20240205120420](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240205120420.png)
 
 在 TCP 建立连接之后，浏览器会首先发一个“**Client Hello**”消息，也就是跟服务器“打招呼”。里面有客户端的版本号、支持的密码套件，还有一个**随机数（Client Random）**，用于后续生成会话密钥。这个的意思就是：“我这边有这些这些信息，你看看哪些是能用的，关键的随机数可得留着。”
-```
+```bash
 Handshake Protocol: Client Hello
 Version: TLS 1.2 (0x0303)
 Random: 1cbf803321fd2623408dfe…
@@ -725,7 +724,7 @@ Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)
 
 服务器收到“Client Hello”后，会返回一个“Server Hello”消息。把版本号对一下，也给出一个**随机数（Server Random）**，然后从客户端的列表里选一个作为本次通信使用的密码套件，在这里它选择了“TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384”。
 
-```
+```bash
 Handshake Protocol: Server Hello
 Version: TLS 1.2 (0x0303)
 Random: 0e6320f21bae50842e96…
@@ -736,7 +735,7 @@ Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)
 然后，服务器为了证明自己的身份，就把证书也发给了客户端（Server Certificate）。
 接下来是一个关键的操作，因为服务器选择了 ECDHE 算法，所以它会在证书后发送“**Server Key Exchange**”消息，里面是**椭圆曲线的公钥（Server Params）**，用来实现密钥交换算法，再加上自己的私钥签名认证。
 
-```
+```bash
 Handshake Protocol: Server Key Exchange
 EC Diffie-Hellman Server Params
 Curve Type: named_curve (0x03)
@@ -753,7 +752,7 @@ Signature: 37141adac38ea4...
 客户端这时也拿到了服务器的证书，开始走证书链逐级验证，确认证书的真实性，再用证书公钥验证签名，就确认了服务器的身份：“刚才跟我打招呼的不是骗子，可以接着往下走。”
 
 然后，客户端按照密码套件的要求，也生成一个**椭圆曲线的公钥（Client Params）**，用“**Client Key Exchange**”消息发给服务器。
-```
+```bash
 Handshake Protocol: Client Key Exchange
 EC Diffie-Hellman Client Params
 Pubkey: 8c674d0e08dc27b5eaa…
@@ -766,7 +765,7 @@ Pubkey: 8c674d0e08dc27b5eaa…
 这就必须说 TLS 的设计者考虑得非常周到了，他们不信任客户端或服务器伪随机数的可靠性，为了保证真正的“完全随机”“不可预测”，把三个不可靠的随机数混合起来，那么“随机”的程度就非常高了，足够让黑客难以猜测。
 
 “Master Secret”究竟是怎么算出来的吧，贴一下 RFC 里的公式：
-```
+```bash
 master_secret = PRF(pre_master_secret, "master secret",
 ClientHello.random + ServerHello.random)
 ```
@@ -813,7 +812,7 @@ TLS1.3 的三个主要改进目标：兼容、安全与性能。
 这要用到一个新的**扩展协议**（Extension Protocol），它有点“补充条款”的意思，通过在记录末尾添加一系列的“扩展字段”来增加新的功能，老版本的 TLS 不认识它可以直接忽略，这就实现了“后向兼容”。
 
 在记录头的 Version 字段被兼容性“固定”的情况下，只要是 TLS1.3 协议，握手的“Hello”消息后面就必须有“**supported_versions**”扩展，它标记了 TLS 的版本号，使用它就能区分新旧协议。
-```
+```bash
 Handshake Protocol: Client Hello
 Version: TLS 1.2 (0x0303)
 Extension: supported_versions (len=11)
@@ -922,7 +921,7 @@ HTTPS 连接是计算密集型，而不是 I/O 密集型。所以，如果你花
 另外，椭圆曲线也要选择高性能的曲线，最好是 x25519，次优选择是 P-256。对称加密算法方面，也可以选用“AES_128_GCM”，它能比“AES_256_GCM”略快一点点。
 
 在 Nginx 里可以用“ssl_ciphers”“ssl_ecdh_curve”等指令配置服务器使用的密码套件和椭圆曲线，把优先使用的放在前面，例如：
-```
+```bash
 ssl_ciphers TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:EECDH+CHACHA20； 
 ssl_ecdh_curve X25519:P-256;
 ```
@@ -1004,7 +1003,7 @@ Google 等搜索巨头还利用自身的“话语权”优势，降低 HTTP 站�
 
 ### 4.7.4 配置HTTPS
 这在 Nginx 上非常简单，只要在“listen”指令后面加上参数“ssl”，再配上刚才的证书文件就可以实现最基本的 HTTPS。
-```
+```bash
 listen 443 ssl;
 ssl_certificate xxx_rsa.crt; #rsa2048 cert
 ssl_certificate_key xxx_rsa.key; #rsa2048 private key
@@ -1012,19 +1011,19 @@ ssl_certificate xxx_ecc.crt; #ecdsa cert
 ssl_certificate_key xxx_ecc.key; #ecdsa private ke
 ```
 为了提高 HTTPS 的安全系数和性能，你还可以强制 Nginx 只支持 TLS1.2 以上的协议，打开“Session Ticket”会话复用：
-```
+```bash
 ssl_protocols TLSv1.2 TLSv1.3;
 ssl_session_timeout 5m;
 ssl_session_tickets on;
 ssl_session_ticket_key ticket.key;
 ```
 密码套件的选择方面，我给你的建议是以服务器的套件优先。这样可以避免恶意客户端故意选择较弱的套件、降低安全等级，然后密码套件向 TLS1.3“看齐”，只使用 ECDHE、AES和 ChaCha20，支持“False Start”。
-```
+```bash
 ssl_prefer_server_ciphers on;
 ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128
 ```
 如果你的服务器上使用了 OpenSSL 的分支 BorringSSL，那么还可以使用一个特殊的“等价密码组”（Equal preference cipher groups）特性，它可以让服务器配置一组“等价”的密码套件，在这些套件里允许客户端优先选择，比如这么配置：
-```
+```bash
 ssl_ciphers
 [ECDHE-ECDSA-AES128-GCM-SHA256|ECDHE-ECDSA-CHACHA20-POLY1305];
 ```
@@ -1038,7 +1037,7 @@ ssl_ciphers
 但在 HTTPS 里，因为请求头只有在 TLS 握手之后才能发送，在握手时就必须选择“虚拟主机”对应的证书，TLS 无法得知域名的信息，就只能用 IP 地址来区分。所以，最早的时候每个 HTTPS 域名必须使用独立的 IP 地址，非常不方便。
 
 那么怎么解决这个问题呢？这还是得用到 TLS 的“扩展”，给协议加个SNI（Server Name Indication）的“补充条款”。它的作用和 Host 字段差不多，客户端会在“Client Hello”时带上域名信息，这样服务器就可以根据名字而不是 IP 地址来选择证书。
-```
+```bash
 Extension: server_name (len=19)
 Server Name Indication extension
 Server Name Type: host_name (0)
@@ -1051,7 +1050,7 @@ Nginx 很早就基于 SNI 特性支持了 HTTPS 的虚拟主机，在 OpenResty 
 现在有了 HTTPS 服务，但原来的 HTTP 站点也不能马上弃用，还是会有很多网民习惯在地址栏里直接敲域名（或者是旧的书签、超链接），默认使用 HTTP 协议访问。
 
 所以，我们就需要用到“重定向跳转”技术了，把不安全的 HTTP 网址用 301或 302“重定向”到新的 HTTPS 网站，在 Nginx 里也很容易做到，使“return”或“rewrite”都可以。
-```
+```bash
 return 301 https://$host$request_uri; # 永久重定向
 rewrite ^ https://$host$request_uri permanent; # 永久重定向
 ```
@@ -1059,7 +1058,7 @@ rewrite ^ https://$host$request_uri permanent; # 永久重定向
 但这种方式有两个问题。一个是重定向增加了网络成本，多出了一次请求；另一个是存在安全隐患，重定向的响应可能会被“中间人”窜改，实现“会话劫持”，跳转到恶意网站。
 
 不过有一种叫“**HSTS**”（HTTP 严格传输安全，HTTP Strict Transport Security）的技术可以消除这种安全隐患。HTTPS 服务器需要在发出的响应头里添加一个“**Strict-Transport-Security**”的字段，再设定一个有效期，例如：
-```
+```bash
 Strict-Transport-Security: max-age=15768000; includeSubDomains
 ```
 这相当于告诉浏览器：我这个网站必须严格使用 HTTPS 协议，在半年之内（182.5 天）都不允许用 HTTP，你以后就自己做转换吧，不要再来麻烦我了。

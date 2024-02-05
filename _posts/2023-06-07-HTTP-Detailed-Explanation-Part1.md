@@ -187,7 +187,7 @@ HTTP 协议规定报文必须有 header，但可以没有 body，而且在 heade
 这三个部分通常使用空格（space）来分隔，最后要用CRLF 换行表示结束。
 ![20240205115506](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240205115506.png)
 在如下的请求行里，“GET”是请求方法，“/”是请求目标，“HTTP/1.1”是版本号。
-```bash
+```http
 GET / HTTP/1.1
 ```
 
@@ -198,7 +198,7 @@ GET / HTTP/1.1
 - 原因：作为数字状态码补充，是更详细的解释文字，帮助人理解原因。
 ![20240205115517](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240205115517.png)
 在如下的状态行里，这个报文使用的协议版本号是 1.1，状态码是 200，一切OK。
-```bash
+```http
 HTTP/1.1 200 OK
 ```
 

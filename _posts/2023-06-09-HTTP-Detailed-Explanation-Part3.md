@@ -84,7 +84,7 @@ HTTP/2 还在一定程度上改变了传统的“请求 - 应答”工作模式�
 由于 HTTP/2“事实上”是基于 TLS，所以在正式收发数据之前，会有 TCP 握手和 TLS 握手，TLS 握手成功之后，客户端必须要发送一个“**连接前言**”（connection preface），用来确认建立 HTTP/2 连接。
 
 这个“连接前言”是标准的 HTTP/1 请求报文，使用纯文本的 ASCII 码格式，请求方法是特别注册的一个关键字“PRI”，全文只有 24 个字节：
-```
+```http
 PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n
 ```
 在 Wireshark 里，HTTP/2 的“连接前言”被称为“**Magic**”，意思就是“不可知的魔法”。只要服务器收到这个“有魔力的字符串”，就知道客户端在 TLS 上想要的是 HTTP/2 协议，而不是其他别的协议，后面就会都使用 HTTP/2的数据格式。
@@ -311,7 +311,7 @@ HTTP/2 处于一个略“尴尬”的位置，前面有“老前辈”HTTP/1，�
 
 ### 5.4.4 配置HTTP/2
 因为 HTTP/2“事实上”是加密的，所以如果你已经成功迁移到了HTTPS，那么在 Nginx 里启用 HTTP/2 简直可以说是“不费吹灰之力”，只需要在 server配置里再多加一个参数就可以搞定了。
-```
+```nginx
 server {
 	listen 443 ssl http2;
 	server_name www.xxx.net;
@@ -321,7 +321,7 @@ server {
 注意“listen”指令，在“ssl”后面多了一个“http2”，这就表示在 443 端口上开启了SSL 加密，然后再启用HTTP/2。
 
 配置服务器推送特性可以使用指令“http2_push”和“http2_push_preload”：
-```
+```nginx
 http2_push /style/xxx.css;
 http2_push_preload on;
 ```
@@ -369,7 +369,7 @@ http2_push_preload on;
 除了上面的三个基本性能指标，服务器还要考虑 CPU、内存、硬盘和网卡等系统资源的占用程度，利用率过高或者过低都可能有问题。
 
 在 HTTP 多年的发展过程中，已经出现了很多成熟的工具来测量这些服务器的性能指标，开源的、商业的、命令行的、图形化的都有。在 Linux 上，最常用的性能测试工具可能就是 ab（Apache Bench）了，比如，下面的命令指定了并发数 100，总共发送 10000 个请求：
-```
+```bash
 ab -c 100 -n 10000 'http://www.xxx.com'
 ```
 系统资源监控方面，Linux 自带的工具也非常多，常用的有 uptime、top、vmstat、netstat、sar 等等：
