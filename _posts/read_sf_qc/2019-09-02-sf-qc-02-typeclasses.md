@@ -5,6 +5,7 @@ layout: post
 author: "Hux"
 header-style: text
 hidden: true
+published: false
 tags:
   - SF (软件基础)
   - QC (Quickcheck)
