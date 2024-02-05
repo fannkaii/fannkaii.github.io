@@ -754,7 +754,7 @@ table.table > tbody td,
 table.table > thead td {
   border: 1px solid #c0c0c0 !important;
 }
-.table > thead > th{
+.table > thead > tr > th{
   background-color: #fafafa !important;
 }
 @media screen and (max-width: 767px) {
