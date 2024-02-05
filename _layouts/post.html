@@ -159,6 +159,20 @@ layout: default
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
 </script>
+<script>
+    function MaxPostContainer(){
+        var $container = $("div.post-container");
+        if($container.hasClass('col-lg-8')){
+            $container.removeClass('col-lg-8').removeClass('col-lg-offset-2').removeClass('col-md-10').removeClass('col-md-offset-1')
+                .addClass('col-lg-10').addClass('col-md-11');
+        }else{
+            $container.addClass('col-lg-8').addClass('col-lg-offset-2').addClass('col-md-10').addClass('col-md-offset-1')
+                .removeClass('col-lg-10').removeClass('col-md-11');
+        }
+
+    }
+    $("div.post-heading").prepend(" <a href='javascript:void(0)' click='MaxPostContainer()' style='color: blue; margin-left: 20px;' >[Switch Container Size]</a>");
+</script>
 <style>
     /* place left on bigger screen */
     @media all and (min-width: 800px) {
