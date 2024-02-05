@@ -343,7 +343,7 @@
         }
     }
     $(function(){
-        var $header = $("div.post-heading");
+        var $header = $("div.subheading").closest("div.post-heading");
         if($header.length > 0){
             $header.prepend(" <a href='javascript:void(0)' click='MaxPostContainer()' style='color: blue; margin-left: 20px;' >[Switch Container Size]</a>");
         }
