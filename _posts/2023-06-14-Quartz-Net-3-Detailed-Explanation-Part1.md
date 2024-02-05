@@ -59,7 +59,7 @@ System.Timers.Timer 类具有“内置”定时器功能，为什么有人会使
 
 # 2. 快速开始
 ## 2.1 引入nuget包
-```
+```plaintext
 Quartz  基于3.4.0 Net6
 ```
 
