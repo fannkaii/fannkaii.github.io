@@ -169,9 +169,10 @@ layout: default
             $container.addClass('col-lg-8').addClass('col-lg-offset-2').addClass('col-md-10').addClass('col-md-offset-1')
                 .removeClass('col-lg-10').removeClass('col-md-11');
         }
-
     }
-    $("div.post-heading").prepend(" <a href='javascript:void(0)' click='MaxPostContainer()' style='color: blue; margin-left: 20px;' >[Switch Container Size]</a>");
+    $(function(){
+        $("div.post-heading").prepend(" <a href='javascript:void(0)' click='MaxPostContainer()' style='color: blue; margin-left: 20px;' >[Switch Container Size]</a>");
+    });
 </script>
 <style>
     /* place left on bigger screen */
