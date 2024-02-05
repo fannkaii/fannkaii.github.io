@@ -20,7 +20,7 @@ tags:
 启用双因子验证时，我们需要将EmailComfirmed设置为Ture
 ![20240205141905](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240205141905.png)
 
-#2. 实现Identity双因子验证
+# 2. 实现Identity双因子验证
 为了实现ASP.NET Core Identity双因子验证我们需要修改一下AccountController内Login方法，代码如下所示：
 ```csharp
 [HttpPost]
