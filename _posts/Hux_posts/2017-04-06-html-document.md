@@ -4,6 +4,7 @@ title: 如何理解 <code>document</code> 对象是 <code>HTMLDocument</code> �
 subtitle: Why is <code>document</code> an instance of <code>HTMLDocument</code>?
 author: "Hux"
 header-style: text
+published: false
 tags:
   - Web
   - 知乎

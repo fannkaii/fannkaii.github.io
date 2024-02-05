@@ -5,6 +5,7 @@ subtitle: "How to explain the Halting Problem?"
 author: "Hux"
 header-img: "img/post-bg-halting.jpg"
 header-mask: 0.3
+published: false
 tags:
   - 知乎
   - 计算理论

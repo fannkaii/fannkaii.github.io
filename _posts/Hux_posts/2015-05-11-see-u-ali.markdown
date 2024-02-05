@@ -5,6 +5,7 @@ subtitle:   "再见，阿里。"
 date:       2015-05-11
 author:     "Hux"
 header-img: "img/post-bg-see-u-ali.jpg"
+published: false
 tags:
   - Meta
   - 阿里

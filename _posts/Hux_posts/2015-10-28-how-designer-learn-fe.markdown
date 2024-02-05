@@ -5,6 +5,7 @@ subtitle:   "How designers learn front-end development?"
 date:       2015-10-28 12:00:00
 author:     "Hux"
 header-img: "img/home-bg-o.jpg"
+published: false
 tags:
     - 知乎
     - Web
