@@ -55,7 +55,7 @@ tags:
 ![20240206094611](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240206094611.png)
 
 # 9. Meta Tags Toolkit
-Meta Tags Toolkit 是一个用于创建和优化网站元标签的工具。元标签是网页的元数据，用于描述网页的内容、主题和属性。它们对于搜索引擎优化（SEO）和网站可访问性非常重要。
+[Meta Tags Toolkit](https://metatags.io/) 是一个用于创建和优化网站元标签的工具。元标签是网页的元数据，用于描述网页的内容、主题和属性。它们对于搜索引擎优化（SEO）和网站可访问性非常重要。
 
 值得一提的是这个网站还可以生成特殊的英文字体，在发文的时候用于宣传 🅻🅸🅺🅴 🆃🅷🅸🆂 𝔸𝕟𝕕 𝕥𝕙𝕚𝕤 ᴀɴᴅ ᴍᴏʀᴇ
 
