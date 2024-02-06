@@ -1759,3 +1759,9 @@ div.post-preview + hr{ display: none; }
 div.post-preview > a > h2.post-title{ margin: 7px 0 0;  font-size: 18px; }
 
 ul.pager{ position: absolute; bottom: -60px; right: 0; margin: 0!important; width: 100% }
+
+.mybody{ background-color: #000!important; color: white!important; }
+.mybody nav.navbar *{ background-color: #000!important; color: white!important; }
+.mybody div.post-heading *{ background-color: #000!important; color: white!important; }
+.mybody a.tag{ border-color: white!important; }
+.mybody pre.line-numbers{ border-color: #000!important; }
