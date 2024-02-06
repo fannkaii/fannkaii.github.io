@@ -1765,4 +1765,4 @@ ul.pager{ position: absolute; bottom: -60px; right: 0; margin: 0!important; widt
 .mybody div.post-heading *{ background-color: #000!important; color: white!important; }
 .mybody a.tag{ border-color: white!important; }
 .mybody pre.line-numbers{ border-color: #000!important; }
-.mybody code:not([class]) { background-color: #8f4b28; color: #fff; font-weight: 0; }
+.mybody code:not([class]) { background-color: #8f4b28; color: #fff; font-weight: 100; }
