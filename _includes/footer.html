@@ -342,10 +342,23 @@
                 .removeClass('col-lg-10').removeClass('col-md-11');
         }
     }
+    function ToggleTextColor(){
+        var $body = $("body");
+        if($body.hasClass('mybody')){
+            $body.removeClass('mybody');
+            $("link[href='/css/prism-vsc-dark-plus.css']").remove();
+            $("head").append('<link rel="stylesheet" href="/css/prism-ghcolors.css">');
+        }else{
+            $body.addClass('mybody');
+            $("link[href='/css/prism-ghcolors.css']").remove();
+            $("head").append('<link rel="stylesheet" href="/css/prism-vsc-dark-plus.css">');
+        }
+    }
     $(function(){
         var $header = $("h2.subheading").closest("div.post-heading");
         if($header.length > 0){
             $header.append("<a href='javascript:void(0)' onclick='MaxPostContainer()' style='color: blue;' >[Switch Container Size]</a>");
+            $header.append(" <a href='javascript:void(0)' onclick='ToggleTextColor()' style='color: blue;' >[Toggle Text Color]</a>");
         }
     })
 </script>
