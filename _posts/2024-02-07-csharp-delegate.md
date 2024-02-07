@@ -548,6 +548,7 @@ public delegate void Action<in T1, in T2, in T3, in T4, in T5, in T6, in T7, in 
 2. 可以通过+=把多个方法添加到这个委托中，形成一个方法的执行链，执行委托的时候，按照添加方法的顺序，依次去执行方法
 3. action.BeginInvoke();会开启一个新的线程 去执行委托，注册有多个方法的委托，不能使用BeginInvoke
 4. 注册有多个方法的委托想要开启新线程去执行委托，可以通过action.GetInvocationList()获取到所有的委托，然后循环，每个方法执行的时候可以BeginInvoke
+
     **定义一个测试类**
     ```csharp
     using System;
@@ -612,6 +613,7 @@ public delegate void Action<in T1, in T2, in T3, in T4, in T5, in T6, in T7, in 
 
 5. 可以通过-=移除方法，是从后往前，逐个匹配，如果匹配不到，就不做任何操作，如果匹配到，就把当前这个移除，且停止去继续往后匹配
 6. 在移除的方法的时候，必须是同一个实例的同一个方法才能移除，每个lambda表达式在底层会生成不同的方法名的，看起来一样实际不同
+
     **多播委托注册移除执行**
     ```csharp
     //注册方法链
