@@ -1766,3 +1766,4 @@ ul.pager{ position: absolute; bottom: -60px; right: 0; margin: 0!important; widt
 .mybody a.tag{ border-color: white!important; }
 .mybody pre.line-numbers{ border-color: #000!important; }
 .mybody code:not([class]) { background-color: #8f4b28; color: #fff; font-weight: 100; }
+.mybody .table > thead > tr > th{ background-color: #393939 !important; }
