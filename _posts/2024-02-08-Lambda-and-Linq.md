@@ -95,8 +95,8 @@ tags:
 ## 2.1 匿名类是什么
 形如`new {}`，new一个对象，不需要类名称了，NETFramework 3.0出现的
 
-## 2.2 匿名类 + object
-object去接匿名类，无法访问属性值，因为C#是强类型语言，object是在编译时确定类型，因为Object没有这个属性
+## 2.2 匿名类 + `object`
+`object`去接匿名类，无法访问属性值，因为C#是强类型语言，`object`是在编译时确定类型，因为`Object`没有这个属性
 ```csharp
 object model = new  
 {
