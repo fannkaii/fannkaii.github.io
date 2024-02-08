@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "C#高级--Lambda & Linq详解"
+title: "C#高级--Expression详解"
 author: "Kai"
 header-style: text
 tags:
