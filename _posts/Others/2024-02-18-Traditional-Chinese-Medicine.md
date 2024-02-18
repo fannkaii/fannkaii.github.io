@@ -4,17 +4,17 @@ title: "中医入门知识 - 五脏的生理机能"
 author: "Kai"
 header-style: text
 tags:
-  - C#
+  - 中医
 ---
 
-![20240218170557](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170557.png)
+![img](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170557.png){:width="850px"}
 
-![20240218170609](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170609.png)
+![img](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170609.png){:width="850px"}
 
-![20240218170627](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170627.png)
+![img]([xxx](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170627.png)){:width="850px"}
 
-![20240218170640](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170640.png)
+![img]([xxx](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170640.png)){:width="850px"}
 
-![20240218170654](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170654.png)
+![img]([xxx](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170654.png)){:width="850px"}
 
 ![20240218170711](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240218170711.png)
