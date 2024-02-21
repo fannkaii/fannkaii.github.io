@@ -17,3 +17,6 @@ tags:
 #Example:
 .\nuget.exe restore C:\Users\FK\Desktop\4.10 -DirectDownload -PackagesDirectory C:\Users\FK\Desktop\4.10\save
 ```
+
+上述命令中会用到Nuget命令行程序 **nuget.exe**，在这里下载：[https://www.nuget.org/downloads](https://www.nuget.org/downloads)  
+**下载页面里的“Windows x86 Commandline”**
