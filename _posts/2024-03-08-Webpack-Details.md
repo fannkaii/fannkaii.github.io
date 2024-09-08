@@ -71,22 +71,22 @@ tags:
   - **需求**：代码变化后再更新打包
   - **步骤**:
     1. 新建`src/tool/tool.js`导出数组求和方法
-      ```javascript
-      export const getArrSum = arr => arr.reduce((sum, val) => sum += val, 0)
-      ```
+        ```javascript
+        export const getArrSum = arr => arr.reduce((sum, val) => sum += val, 0)
+        ```
     2. `src/index.js`导入使用
-      ```javascript
-      import { addFn } from './add/add'
-      import { getArrSum } from './tool/tool'
+        ```javascript
+        import { addFn } from './add/add'
+        import { getArrSum } from './tool/tool'
 
-      console.log(addFn(5, 2));
-      console.log(getArrSum([5, 6, 9, 10]));
-      ```
+        console.log(addFn(5, 2));
+        console.log(getArrSum([5, 6, 9, 10]));
+        ```
     3. 运行打包命令`npm run build`，效果：
        1. 自动覆盖原dist中的main.js，生成的内容压缩极致
-        ```javascript
-        (()=>{"use strict";console.log(7),console.log([5,6,9,10].reduce(((o,e)=>o+e),0))})();
-        ```
+          ```javascript
+          (()=>{"use strict";console.log(7),console.log([5,6,9,10].reduce(((o,e)=>o+e),0))})();
+          ```
        2. 打包关系图
         ![20240908190544](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20240908190544.png)
 
@@ -101,17 +101,17 @@ tags:
   1. 创建项目文件夹`webpack-config`
   2. `webpack-study`案例的文件复制一份进来
   3. 在项目根目录新建`webpack.config.js`文件 (默认配置文件名)
-    ```javascript
-    const path = require("path")
+      ```javascript
+      const path = require("path")
 
-    module.exports = {
-        entry: "./src/main.js", // 入口：可以是相对路径
-        output: {
-            path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
-            filename: "bundle.js" // 出口"文件"名
-        }
-    }
-    ```
+      module.exports = {
+          entry: "./src/main.js", // 入口：可以是相对路径
+          output: {
+              path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
+              filename: "bundle.js" // 出口"文件"名
+          }
+      }
+      ```
   4. 重命名文件`src/index.js` 为 `src/main.js`
   5. 运行打包命令`npm run build`
 
@@ -130,51 +130,51 @@ tags:
   2. `webpack-config`案例的文件复制一份进来
   3. 安装`jquery`包`npm install jquery`
   4. 新建前端首页`public/index.html`
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
-    </head>
-    <body>
+      ```html
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+      </head>
+      <body>
 
-    <div id="app">
-      <!-- ul>li{我是第$个li}*10 -->
-      <ul>
-        <li>我是第1个li</li>
-        <li>我是第2个li</li>
-        <li>我是第3个li</li>
-        <li>我是第4个li</li>
-        <li>我是第5个li</li>
-        <li>我是第6个li</li>
-        <li>我是第7个li</li>
-        <li>我是第8个li</li>
-        <li>我是第9个li</li>
-      </ul>
-    </div>
+      <div id="app">
+        <!-- ul>li{我是第$个li}*10 -->
+        <ul>
+          <li>我是第1个li</li>
+          <li>我是第2个li</li>
+          <li>我是第3个li</li>
+          <li>我是第4个li</li>
+          <li>我是第5个li</li>
+          <li>我是第6个li</li>
+          <li>我是第7个li</li>
+          <li>我是第8个li</li>
+          <li>我是第9个li</li>
+        </ul>
+      </div>
 
-    </body>
-    </html>
-    ```
+      </body>
+      </html>
+      ```
 
   5. 修改`src/main.js`文件
-    ```javascript
-    import $ from 'jquery'
+      ```javascript
+      import $ from 'jquery'
 
-    $(function() {
-      $('#app li:nth-child(odd)').css('color', 'red')
-      $('#app li:nth-child(even)').css('color', 'green')
-    })
-    ```
+      $(function() {
+        $('#app li:nth-child(odd)').css('color', 'red')
+        $('#app li:nth-child(even)').css('color', 'green')
+      })
+      ```
 
   6. 运行打包命令 **npm run build**
   7. 把`public/index.html`文件**手动**复制到`dist/index.html`，在`dist/index.html`中**手动**引入打包后的`bundle.js`
-    ```html
-    <script src="../dist/bundle.js"></script>
-    ```
+      ```html
+      <script src="../dist/bundle.js"></script>
+      ```
 
 - **效果**：
   - 最终运行效果
@@ -194,34 +194,34 @@ tags:
   1. 创建项目文件夹`webpack-htmlplugin`
   2. `webpack-jquery`案例的文件复制一份进来
   3. 安装`html-webpack-plugin`
-    ```bash
-    npm install html-webpack-plugin -D
-    ```
+      ```bash
+      npm install html-webpack-plugin -D
+      ```
   4. 修改`webpack.config.js`配置文件
-    ```javascript
-    const path = require("path")
+      ```javascript
+      const path = require("path")
 
-    // 引入自动生成 html 的插件
-    const HtmlWebpackPlugin = require('html-webpack-plugin')
+      // 引入自动生成 html 的插件
+      const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-    module.exports = {
-        entry: "./src/main.js", // 入口：可以是相对路径
-        output: {
-            path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
-            filename: "bundle.js" // 出口"文件"名
-        },
-        plugins: [
-            // html 插件
-            new HtmlWebpackPlugin({
-                // 指定要复制的HTML文件位置
-                // 可以使用相对路径
-                // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
-                // defer: 等页面资源加载完成后加载js文件
-                template: './public/index.html'
-            })
-        ]
-    }
-    ```
+      module.exports = {
+          entry: "./src/main.js", // 入口：可以是相对路径
+          output: {
+              path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
+              filename: "bundle.js" // 出口"文件"名
+          },
+          plugins: [
+              // html 插件
+              new HtmlWebpackPlugin({
+                  // 指定要复制的HTML文件位置
+                  // 可以使用相对路径
+                  // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
+                  // defer: 等页面资源加载完成后加载js文件
+                  template: './public/index.html'
+              })
+          ]
+      }
+      ```
 
   5. 执行打包命令`npm run build`
 
@@ -238,59 +238,59 @@ tags:
   1. 创建项目文件夹`webpack-css`
   2. `webpack-htmlplugin`案例的文件复制一份进来
   3. 安装`css-loader`，`style-loader`
-    ```bash
-    npm install css-loader style-loader -D
-    ```
+      ```bash
+      npm install css-loader style-loader -D
+      ```
   4. 修改`webpack.config.js`配置文件
-    ```javascript
-    const path = require("path")
+      ```javascript
+      const path = require("path")
 
-    // 引入自动生成 html 的插件
-    const HtmlWebpackPlugin = require('html-webpack-plugin')
+      // 引入自动生成 html 的插件
+      const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-    module.exports = {
-        entry: "./src/main.js", // 入口：可以是相对路径
-        output: {
-            path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
-            filename: "bundle.js" // 出口"文件"名
-        },
-        plugins: [
-            // html 插件
-            new HtmlWebpackPlugin({
-                // 指定要复制的HTML文件位置
-                // 可以使用相对路径
-                // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
-                // defer: 等页面资源加载完成后加载js文件
-                template: './public/index.html'
-            })
-        ],
-        module: { // 如何处理项目中不同模块文件
-            rules: [ // 规则
-                {
-                    // . 表示除换行符以外的任意字符
-                    // \ 转义符
-                    test: /\.css$/, // 匹配所有的css文件
-                    // loader的加载顺序是从右往左
-                    // 先用css-loader让webpack能够识别css文件并打包
-                    // 再用style-loader将样式插入到dom中
-                    use: ["style-loader", "css-loader"]
-                }
-            ]
-        }
-    }
-    ```
+      module.exports = {
+          entry: "./src/main.js", // 入口：可以是相对路径
+          output: {
+              path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
+              filename: "bundle.js" // 出口"文件"名
+          },
+          plugins: [
+              // html 插件
+              new HtmlWebpackPlugin({
+                  // 指定要复制的HTML文件位置
+                  // 可以使用相对路径
+                  // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
+                  // defer: 等页面资源加载完成后加载js文件
+                  template: './public/index.html'
+              })
+          ],
+          module: { // 如何处理项目中不同模块文件
+              rules: [ // 规则
+                  {
+                      // . 表示除换行符以外的任意字符
+                      // \ 转义符
+                      test: /\.css$/, // 匹配所有的css文件
+                      // loader的加载顺序是从右往左
+                      // 先用css-loader让webpack能够识别css文件并打包
+                      // 再用style-loader将样式插入到dom中
+                      use: ["style-loader", "css-loader"]
+                  }
+              ]
+          }
+      }
+      ```
 
   5. 新建`src/css/index.css`，填上样式去除li圆点样式
-    ```css
-    li{
-        list-style: none;
-    }
-    ```
+      ```css
+      li{
+          list-style: none;
+      }
+      ```
 
   6. 在`main.js`引入`index.css`，一定要引入到入口才会被webpack打包
-    ```javascript
-    import "./css/index.css"
-    ```
+      ```javascript
+      import "./css/index.css"
+      ```
 
 - **效果**：实现去除li圆点样式
 
@@ -304,68 +304,68 @@ tags:
   1. 创建项目文件夹`webpack-less`
   2. `webpack-css`案例的文件复制一份进来
   3. 安装`less-loader`，`less`
-    ```bash
-    npm install less less-loader -D
-    ```
+      ```bash
+      npm install less less-loader -D
+      ```
   4. 修改`webpack.config.js`配置文件
-    ```javascript
-    const path = require("path")
+      ```javascript
+      const path = require("path")
 
-    // 引入自动生成 html 的插件
-    const HtmlWebpackPlugin = require('html-webpack-plugin')
+      // 引入自动生成 html 的插件
+      const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-    module.exports = {
-        entry: "./src/main.js", // 入口：可以是相对路径
-        output: {
-            path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
-            filename: "bundle.js" // 出口"文件"名
-        },
-        plugins: [
-            // html 插件
-            new HtmlWebpackPlugin({
-                // 指定要复制的HTML文件位置
-                // 可以使用相对路径
-                // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
-                // defer: 等页面资源加载完成后加载js文件
-                template: './public/index.html'
-            })
-        ],
-        module: { // 如何处理项目中不同模块文件
-            rules: [ // 规则
-                {
-                    // . 表示除换行符以外的任意字符
-                    // \ 转义符
-                    test: /\.css$/, // 匹配所有的css文件
-                    // loader的加载顺序是从右往左
-                    // 先用css-loader让webpack能够识别css文件并打包
-                    // 再用style-loader将样式插入到dom中
-                    use: ["style-loader", "css-loader"]
-                },
-                {
-                    test: /\.less$/, // 匹配.less结尾文件
-                    // 使用less-loader让webpack能够识别less文件 
-                    // 内置还会用less模块, 翻译less代码成css代码
-                    // 然后再打包CSS文件，并将样式插入到dom中
-                    use: ["style-loader", "css-loader", 'less-loader']
-                }
-            ]
-        }
-    }
-    ```
+      module.exports = {
+          entry: "./src/main.js", // 入口：可以是相对路径
+          output: {
+              path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
+              filename: "bundle.js" // 出口"文件"名
+          },
+          plugins: [
+              // html 插件
+              new HtmlWebpackPlugin({
+                  // 指定要复制的HTML文件位置
+                  // 可以使用相对路径
+                  // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
+                  // defer: 等页面资源加载完成后加载js文件
+                  template: './public/index.html'
+              })
+          ],
+          module: { // 如何处理项目中不同模块文件
+              rules: [ // 规则
+                  {
+                      // . 表示除换行符以外的任意字符
+                      // \ 转义符
+                      test: /\.css$/, // 匹配所有的css文件
+                      // loader的加载顺序是从右往左
+                      // 先用css-loader让webpack能够识别css文件并打包
+                      // 再用style-loader将样式插入到dom中
+                      use: ["style-loader", "css-loader"]
+                  },
+                  {
+                      test: /\.less$/, // 匹配.less结尾文件
+                      // 使用less-loader让webpack能够识别less文件 
+                      // 内置还会用less模块, 翻译less代码成css代码
+                      // 然后再打包CSS文件，并将样式插入到dom中
+                      use: ["style-loader", "css-loader", 'less-loader']
+                  }
+              ]
+          }
+      }
+      ```
 
   5. 新建`src/less/index.less`，设置li字体大小24px
-    ```css
-    @size:24px;
+      ```css
+      @size:24px;
 
-    ul, li{
-        font-size: @size
-    }
-    ```
+      ul, li{
+          font-size: @size
+      }
+      ```
 
   6. 引入到main.js中
-    ```javascript
-    import "./less/index.less"
-    ```
+      ```javascript
+      import "./less/index.less"
+      ```
 
   7. 执行打包命令`npm run build`
 
@@ -381,81 +381,81 @@ tags:
   2. `webpack-less`案例的文件复制一份进来
   3. `src`文件夹下创建`assets`文件夹，放入两张图片
   4. 在`css/less/index.less`设置body背景图片
-    ```less
-    body{
-        background: url(../assets/logo_small.png) no-repeat center;
-    }
-    ```
+      ```less
+      body{
+          background: url(../assets/logo_small.png) no-repeat center;
+      }
+      ```
 
   5. 在`src/main.js`把图片添加body上显示
-    ```javascript
-    // 引入图片-使用
-    import imgUrl from './assets/1.gif'
-    const theImg = document.createElement("img")
-    theImg.src = imgUrl
-    document.body.appendChild(theImg)
-    ```
+      ```javascript
+      // 引入图片-使用
+      import imgUrl from './assets/1.gif'
+      const theImg = document.createElement("img")
+      theImg.src = imgUrl
+      document.body.appendChild(theImg)
+      ```
 
   6. 修改`webpack.config.js`配置文件
-    ```javascript
-    const path = require("path")
+      ```javascript
+      const path = require("path")
 
-    // 引入自动生成 html 的插件
-    const HtmlWebpackPlugin = require('html-webpack-plugin')
+      // 引入自动生成 html 的插件
+      const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-    module.exports = {
-        entry: "./src/main.js", // 入口：可以是相对路径
-        output: {
-            path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
-            filename: "bundle.js" // 出口"文件"名
-        },
-        plugins: [
-            // html 插件
-            new HtmlWebpackPlugin({
-                // 指定要复制的HTML文件位置
-                // 可以使用相对路径
-                // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
-                // defer: 等页面资源加载完成后加载js文件
-                template: './public/index.html'
-            })
-        ],
-        module: { // 如何处理项目中不同模块文件
-            rules: [ // 规则
-                {
-                    // . 表示除换行符以外的任意字符
-                    // \ 转义符
-                    test: /\.css$/, // 匹配所有的css文件
-                    // loader的加载顺序是从右往左
-                    // 先用css-loader让webpack能够识别css文件并打包
-                    // 再用style-loader将样式插入到dom中
-                    use: ["style-loader", "css-loader"]
-                },
-                {
-                    test: /\.less$/, // 匹配.less结尾文件
-                    // 使用less-loader让webpack能够识别less文件 
-                    // 内置还会用less模块, 翻译less代码成css代码
-                    // 然后再打包CSS文件，并将样式插入到dom中
-                    use: ["style-loader", "css-loader", 'less-loader']
-                },
-                {
-                    test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
-                    // asset
-                    // 大于 8KB 不转 base64 直接复制
-                    // 小于 8KB 转成 base64 插入到 js 中
-                    type: 'asset',
-                    // generator 就是定义打包输出的规则
-                    generator: {
-                        // [] 的内容当做内置的变量
-                        // [name] 表示原先的文件名
-                        // [hash:6] 表示使用哈希字符串, 长度6
-                        // [ext] 表示后缀名 带 .
-                        filename: 'imgs/[name].[hash:4][ext]'
-                    }
-                }
-            ]
-        }
-    }
-    ```
+      module.exports = {
+          entry: "./src/main.js", // 入口：可以是相对路径
+          output: {
+              path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
+              filename: "bundle.js" // 出口"文件"名
+          },
+          plugins: [
+              // html 插件
+              new HtmlWebpackPlugin({
+                  // 指定要复制的HTML文件位置
+                  // 可以使用相对路径
+                  // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
+                  // defer: 等页面资源加载完成后加载js文件
+                  template: './public/index.html'
+              })
+          ],
+          module: { // 如何处理项目中不同模块文件
+              rules: [ // 规则
+                  {
+                      // . 表示除换行符以外的任意字符
+                      // \ 转义符
+                      test: /\.css$/, // 匹配所有的css文件
+                      // loader的加载顺序是从右往左
+                      // 先用css-loader让webpack能够识别css文件并打包
+                      // 再用style-loader将样式插入到dom中
+                      use: ["style-loader", "css-loader"]
+                  },
+                  {
+                      test: /\.less$/, // 匹配.less结尾文件
+                      // 使用less-loader让webpack能够识别less文件 
+                      // 内置还会用less模块, 翻译less代码成css代码
+                      // 然后再打包CSS文件，并将样式插入到dom中
+                      use: ["style-loader", "css-loader", 'less-loader']
+                  },
+                  {
+                      test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
+                      // asset
+                      // 大于 8KB 不转 base64 直接复制
+                      // 小于 8KB 转成 base64 插入到 js 中
+                      type: 'asset',
+                      // generator 就是定义打包输出的规则
+                      generator: {
+                          // [] 的内容当做内置的变量
+                          // [name] 表示原先的文件名
+                          // [hash:6] 表示使用哈希字符串, 长度6
+                          // [ext] 表示后缀名 带 .
+                          filename: 'imgs/[name].[hash:4][ext]'
+                      }
+                  }
+              ]
+          }
+      }
+      ```
 
 ​ 7. 执行打包命令`npm run build`
 
@@ -475,86 +475,86 @@ tags:
   2. `webpack-pic`案例的文件复制一份进来
   3. `assets`文件夹下创建`fonts`文件夹，放入字体文件
   4. 在`main.js`引入`iconfont.css`
-    ```javascript
-    // 引入字体图标文件
-    import './assets/fonts/iconfont.css'
-    ```
+      ```javascript
+      // 引入字体图标文件
+      import './assets/fonts/iconfont.css'
+      ```
   5. 在`public/index.html`使用字体图标样式
-    ```html
-    <i class="iconfont icon-weixin"></i>
-    ```
+      ```html
+      <i class="iconfont icon-weixin"></i>
+      ```
   6. 修改`webpack.config.js`配置文件
-    ```javascript
-    const path = require("path")
+      ```javascript
+      const path = require("path")
 
-    // 引入自动生成 html 的插件
-    const HtmlWebpackPlugin = require('html-webpack-plugin')
+      // 引入自动生成 html 的插件
+      const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-    module.exports = {
-        entry: "./src/main.js", // 入口：可以是相对路径
-        output: {
-            path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
-            filename: "bundle.js" // 出口"文件"名
-        },
-        plugins: [
-            // html 插件
-            new HtmlWebpackPlugin({
-                // 指定要复制的HTML文件位置
-                // 可以使用相对路径
-                // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
-                // defer: 等页面资源加载完成后加载js文件
-                template: './public/index.html'
-            })
-        ],
-        module: { // 如何处理项目中不同模块文件
-            rules: [ // 规则
-                {
-                    // . 表示除换行符以外的任意字符
-                    // \ 转义符
-                    test: /\.css$/, // 匹配所有的css文件
-                    // loader的加载顺序是从右往左
-                    // 先用css-loader让webpack能够识别css文件并打包
-                    // 再用style-loader将样式插入到dom中
-                    use: ["style-loader", "css-loader"]
-                },
-                {
-                    test: /\.less$/, // 匹配.less结尾文件
-                    // 使用less-loader让webpack能够识别less文件 
-                    // 内置还会用less模块, 翻译less代码成css代码
-                    // 然后再打包CSS文件，并将样式插入到dom中
-                    use: ["style-loader", "css-loader", 'less-loader']
-                },
-                {
-                    test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
-                    // asset
-                    // 大于 8KB 不转 base64 直接复制
-                    // 小于 8KB 转成 base64 插入到 js 中
-                    type: 'asset',
-                    // generator 就是定义打包输出的规则
-                    generator: {
-                        // [] 的内容当做内置的变量
-                        // [name] 表示原先的文件名
-                        // [hash:6] 表示使用哈希字符串, 长度6
-                        // [ext] 表示后缀名 带 .
-                        filename: 'imgs/[name].[hash:4][ext]'
-                    }
-                },
-                {
-                    test: /\.(eot|svg|ttf|woff|woff2)$/i, // 匹配字体文件
-                    // asset/resource:不做base64转换, 无论多大多小都直接复制到出口
-                    type: 'asset/resource',
-                    generator: {
-                        // [] 的内容当做内置的变量
-                        // [name] 表示原先的文件名
-                        // [hash:6] 表示使用哈希字符串, 长度6
-                        // [ext] 表示后缀名 带 .
-                        filename: 'fonts/[name].[hash:4][ext]'
-                    }
-                }
-            ]
-        }
-    }
-    ```
+      module.exports = {
+          entry: "./src/main.js", // 入口：可以是相对路径
+          output: {
+              path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
+              filename: "bundle.js" // 出口"文件"名
+          },
+          plugins: [
+              // html 插件
+              new HtmlWebpackPlugin({
+                  // 指定要复制的HTML文件位置
+                  // 可以使用相对路径
+                  // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
+                  // defer: 等页面资源加载完成后加载js文件
+                  template: './public/index.html'
+              })
+          ],
+          module: { // 如何处理项目中不同模块文件
+              rules: [ // 规则
+                  {
+                      // . 表示除换行符以外的任意字符
+                      // \ 转义符
+                      test: /\.css$/, // 匹配所有的css文件
+                      // loader的加载顺序是从右往左
+                      // 先用css-loader让webpack能够识别css文件并打包
+                      // 再用style-loader将样式插入到dom中
+                      use: ["style-loader", "css-loader"]
+                  },
+                  {
+                      test: /\.less$/, // 匹配.less结尾文件
+                      // 使用less-loader让webpack能够识别less文件 
+                      // 内置还会用less模块, 翻译less代码成css代码
+                      // 然后再打包CSS文件，并将样式插入到dom中
+                      use: ["style-loader", "css-loader", 'less-loader']
+                  },
+                  {
+                      test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
+                      // asset
+                      // 大于 8KB 不转 base64 直接复制
+                      // 小于 8KB 转成 base64 插入到 js 中
+                      type: 'asset',
+                      // generator 就是定义打包输出的规则
+                      generator: {
+                          // [] 的内容当做内置的变量
+                          // [name] 表示原先的文件名
+                          // [hash:6] 表示使用哈希字符串, 长度6
+                          // [ext] 表示后缀名 带 .
+                          filename: 'imgs/[name].[hash:4][ext]'
+                      }
+                  },
+                  {
+                      test: /\.(eot|svg|ttf|woff|woff2)$/i, // 匹配字体文件
+                      // asset/resource:不做base64转换, 无论多大多小都直接复制到出口
+                      type: 'asset/resource',
+                      generator: {
+                          // [] 的内容当做内置的变量
+                          // [name] 表示原先的文件名
+                          // [hash:6] 表示使用哈希字符串, 长度6
+                          // [ext] 表示后缀名 带 .
+                          filename: 'fonts/[name].[hash:4][ext]'
+                      }
+                  }
+              ]
+          }
+      }
+      ```
 
   7. 执行打包命令`npm run build`
 
@@ -572,99 +572,99 @@ tags:
   1. 创建项目文件夹`webpack-es6`
   2. `webpack-font`案例的文件复制一份进来
   3. 在`src/main.js`编写箭头函数
-    ```javascript
-    const fn = () => { // 高级语法
-      console.log("你好babel");
-    }
-    console.log(fn) // 一定打印函数, 才会被webpack把"函数体"打包起来
-    ```
+      ```javascript
+      const fn = () => { // 高级语法
+        console.log("你好babel");
+      }
+      console.log(fn) // 一定打印函数, 才会被webpack把"函数体"打包起来
+      ```
   4. 安装包`babel-loader`，`@babel/core`，`@babel/preset-env`
-    ```bash
-    npm install babel-loader @babel/core @babel/preset-env -D
-    ```
+      ```bash
+      npm install babel-loader @babel/core @babel/preset-env -D
+      ```
   5. 修改`webpack.config.js`配置文件
-    ```javascript
-    const path = require("path")
+      ```javascript
+      const path = require("path")
 
-    // 引入自动生成 html 的插件
-    const HtmlWebpackPlugin = require('html-webpack-plugin')
+      // 引入自动生成 html 的插件
+      const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-    module.exports = {
-        entry: "./src/main.js", // 入口：可以是相对路径
-        output: {
-            path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
-            filename: "bundle.js" // 出口"文件"名
-        },
-        plugins: [
-            // html 插件
-            new HtmlWebpackPlugin({
-                // 指定要复制的HTML文件位置
-                // 可以使用相对路径
-                // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
-                // defer: 等页面资源加载完成后加载js文件
-                template: './public/index.html'
-            })
-        ],
-        module: { // 如何处理项目中不同模块文件
-            rules: [ // 规则
-                {
-                    // . 表示除换行符以外的任意字符
-                    // \ 转义符
-                    test: /\.css$/, // 匹配所有的css文件
-                    // loader的加载顺序是从右往左
-                    // 先用css-loader让webpack能够识别css文件并打包
-                    // 再用style-loader将样式插入到dom中
-                    use: ["style-loader", "css-loader"]
-                },
-                {
-                    test: /\.less$/, // 匹配.less结尾文件
-                    // 使用less-loader让webpack能够识别less文件 
-                    // 内置还会用less模块, 翻译less代码成css代码
-                    // 然后再打包CSS文件，并将样式插入到dom中
-                    use: ["style-loader", "css-loader", 'less-loader']
-                },
-                {
-                    test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
-                    // asset
-                    // 大于 8KB 不转 base64 直接复制
-                    // 小于 8KB 转成 base64 插入到 js 中
-                    type: 'asset',
-                    // generator 就是定义打包输出的规则
-                    generator: {
-                        // [] 的内容当做内置的变量
-                        // [name] 表示原先的文件名
-                        // [hash:6] 表示使用哈希字符串, 长度6
-                        // [ext] 表示后缀名 带 .
-                        filename: 'imgs/[name].[hash:4][ext]'
-                    }
-                },
-                {
-                    test: /\.(eot|svg|ttf|woff|woff2)$/i, // 匹配字体文件
-                    // asset/resource:不做base64转换, 无论多大多小都直接复制到出口
-                    type: 'asset/resource',
-                    generator: {
-                        // [] 的内容当做内置的变量
-                        // [name] 表示原先的文件名
-                        // [hash:6] 表示使用哈希字符串, 长度6
-                        // [ext] 表示后缀名 带 .
-                        filename: 'fonts/[name].[hash:4][ext]'
-                    }
-                },
-                {
-                    // 强烈不建议大家手写, 容易出错
-                    test: /\.m?js$/, // 匹配js结尾文件
-                    exclude: /(node_modules|bower_components)/, // 不转换这2个文件夹里的js
-                    use: {
-                        loader: 'babel-loader', // 使用加载器处理
-                        options: {
-                            presets: ['@babel/preset-env'] // 预设转码规则(用bable开发环境)
-                        }
-                    }
-                }
-            ]
-        }
-    }
-    ```
+      module.exports = {
+          entry: "./src/main.js", // 入口：可以是相对路径
+          output: {
+              path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
+              filename: "bundle.js" // 出口"文件"名
+          },
+          plugins: [
+              // html 插件
+              new HtmlWebpackPlugin({
+                  // 指定要复制的HTML文件位置
+                  // 可以使用相对路径
+                  // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
+                  // defer: 等页面资源加载完成后加载js文件
+                  template: './public/index.html'
+              })
+          ],
+          module: { // 如何处理项目中不同模块文件
+              rules: [ // 规则
+                  {
+                      // . 表示除换行符以外的任意字符
+                      // \ 转义符
+                      test: /\.css$/, // 匹配所有的css文件
+                      // loader的加载顺序是从右往左
+                      // 先用css-loader让webpack能够识别css文件并打包
+                      // 再用style-loader将样式插入到dom中
+                      use: ["style-loader", "css-loader"]
+                  },
+                  {
+                      test: /\.less$/, // 匹配.less结尾文件
+                      // 使用less-loader让webpack能够识别less文件 
+                      // 内置还会用less模块, 翻译less代码成css代码
+                      // 然后再打包CSS文件，并将样式插入到dom中
+                      use: ["style-loader", "css-loader", 'less-loader']
+                  },
+                  {
+                      test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
+                      // asset
+                      // 大于 8KB 不转 base64 直接复制
+                      // 小于 8KB 转成 base64 插入到 js 中
+                      type: 'asset',
+                      // generator 就是定义打包输出的规则
+                      generator: {
+                          // [] 的内容当做内置的变量
+                          // [name] 表示原先的文件名
+                          // [hash:6] 表示使用哈希字符串, 长度6
+                          // [ext] 表示后缀名 带 .
+                          filename: 'imgs/[name].[hash:4][ext]'
+                      }
+                  },
+                  {
+                      test: /\.(eot|svg|ttf|woff|woff2)$/i, // 匹配字体文件
+                      // asset/resource:不做base64转换, 无论多大多小都直接复制到出口
+                      type: 'asset/resource',
+                      generator: {
+                          // [] 的内容当做内置的变量
+                          // [name] 表示原先的文件名
+                          // [hash:6] 表示使用哈希字符串, 长度6
+                          // [ext] 表示后缀名 带 .
+                          filename: 'fonts/[name].[hash:4][ext]'
+                      }
+                  },
+                  {
+                      // 强烈不建议大家手写, 容易出错
+                      test: /\.m?js$/, // 匹配js结尾文件
+                      exclude: /(node_modules|bower_components)/, // 不转换这2个文件夹里的js
+                      use: {
+                          loader: 'babel-loader', // 使用加载器处理
+                          options: {
+                              presets: ['@babel/preset-env'] // 预设转码规则(用bable开发环境)
+                          }
+                      }
+                  }
+              ]
+          }
+      }
+      ```
 
   6. 执行打包命令 `npm run build`
 
@@ -694,104 +694,104 @@ tags:
   1. 创建项目文件夹`webpack-server`
   2. `webpack-es6`案例的文件复制一份进来
   3. 安装包`webpack-dev-server`
-    ```bash
-    npm install webpack-dev-server -D
-    ```
+      ```bash
+      npm install webpack-dev-server -D
+      ```
   4. 修改`package.json`配置文件`scripts`节点
-    ```json
-    scripts: {
-      "build": "webpack",
-      "serve": "webpack serve"
-    }
-    ```
+      ```json
+      scripts: {
+        "build": "webpack",
+        "serve": "webpack serve"
+      }
+      ```
   5. 修改`webpack.config.js`配置文件
-    ```javascript
-    const path = require("path")
+      ```javascript
+      const path = require("path")
 
-    // 引入自动生成 html 的插件
-    const HtmlWebpackPlugin = require('html-webpack-plugin')
+      // 引入自动生成 html 的插件
+      const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-    module.exports = {
-        entry: "./src/main.js", // 入口：可以是相对路径
-        output: {
-            path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
-            filename: "bundle.js" // 出口"文件"名
-        },
-        plugins: [
-            // html 插件
-            new HtmlWebpackPlugin({
-                // 指定要复制的HTML文件位置
-                // 可以使用相对路径
-                // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
-                // defer: 等页面资源加载完成后加载js文件
-                template: './public/index.html'
-            })
-        ],
-        module: { // 如何处理项目中不同模块文件
-            rules: [ // 规则
-                {
-                    // . 表示除换行符以外的任意字符
-                    // \ 转义符
-                    test: /\.css$/, // 匹配所有的css文件
-                    // loader的加载顺序是从右往左
-                    // 先用css-loader让webpack能够识别css文件并打包
-                    // 再用style-loader将样式插入到dom中
-                    use: ["style-loader", "css-loader"]
-                },
-                {
-                    test: /\.less$/, // 匹配.less结尾文件
-                    // 使用less-loader让webpack能够识别less文件 
-                    // 内置还会用less模块, 翻译less代码成css代码
-                    // 然后再打包CSS文件，并将样式插入到dom中
-                    use: ["style-loader", "css-loader", 'less-loader']
-                },
-                {
-                    test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
-                    // asset
-                    // 大于 8KB 不转 base64 直接复制
-                    // 小于 8KB 转成 base64 插入到 js 中
-                    type: 'asset',
-                    // generator 就是定义打包输出的规则
-                    generator: {
-                        // [] 的内容当做内置的变量
-                        // [name] 表示原先的文件名
-                        // [hash:6] 表示使用哈希字符串, 长度6
-                        // [ext] 表示后缀名 带 .
-                        filename: 'imgs/[name].[hash:4][ext]'
-                    }
-                },
-                {
-                    test: /\.(eot|svg|ttf|woff|woff2)$/i, // 匹配字体文件
-                    // asset/resource:不做base64转换, 无论多大多小都直接复制到出口
-                    type: 'asset/resource',
-                    generator: {
-                        // [] 的内容当做内置的变量
-                        // [name] 表示原先的文件名
-                        // [hash:6] 表示使用哈希字符串, 长度6
-                        // [ext] 表示后缀名 带 .
-                        filename: 'fonts/[name].[hash:4][ext]'
-                    }
-                },
-                {
-                    // 强烈不建议大家手写, 容易出错
-                    test: /\.m?js$/, // 匹配js结尾文件
-                    exclude: /(node_modules|bower_components)/, // 不转换这2个文件夹里的js
-                    use: {
-                        loader: 'babel-loader', // 使用加载器处理
-                        options: {
-                            presets: ['@babel/preset-env'] // 预设转码规则(用bable开发环境)
-                        }
-                    }
-                }
-            ]
-        },
-        //webpackserver配置
-        devServer: {
-            port: 3000, // 端口号
-            open: true // 自动打开浏览器
-        }
-    }
-    ```
+      module.exports = {
+          entry: "./src/main.js", // 入口：可以是相对路径
+          output: {
+              path: path.join(__dirname, "dist"), // 出口：必须是绝对路径
+              filename: "bundle.js" // 出口"文件"名
+          },
+          plugins: [
+              // html 插件
+              new HtmlWebpackPlugin({
+                  // 指定要复制的HTML文件位置
+                  // 可以使用相对路径
+                  // 作用: 每次打包时自动从该目录下复制HTML到出口, 同时自动引入js文件, 并添加defer属性
+                  // defer: 等页面资源加载完成后加载js文件
+                  template: './public/index.html'
+              })
+          ],
+          module: { // 如何处理项目中不同模块文件
+              rules: [ // 规则
+                  {
+                      // . 表示除换行符以外的任意字符
+                      // \ 转义符
+                      test: /\.css$/, // 匹配所有的css文件
+                      // loader的加载顺序是从右往左
+                      // 先用css-loader让webpack能够识别css文件并打包
+                      // 再用style-loader将样式插入到dom中
+                      use: ["style-loader", "css-loader"]
+                  },
+                  {
+                      test: /\.less$/, // 匹配.less结尾文件
+                      // 使用less-loader让webpack能够识别less文件 
+                      // 内置还会用less模块, 翻译less代码成css代码
+                      // 然后再打包CSS文件，并将样式插入到dom中
+                      use: ["style-loader", "css-loader", 'less-loader']
+                  },
+                  {
+                      test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
+                      // asset
+                      // 大于 8KB 不转 base64 直接复制
+                      // 小于 8KB 转成 base64 插入到 js 中
+                      type: 'asset',
+                      // generator 就是定义打包输出的规则
+                      generator: {
+                          // [] 的内容当做内置的变量
+                          // [name] 表示原先的文件名
+                          // [hash:6] 表示使用哈希字符串, 长度6
+                          // [ext] 表示后缀名 带 .
+                          filename: 'imgs/[name].[hash:4][ext]'
+                      }
+                  },
+                  {
+                      test: /\.(eot|svg|ttf|woff|woff2)$/i, // 匹配字体文件
+                      // asset/resource:不做base64转换, 无论多大多小都直接复制到出口
+                      type: 'asset/resource',
+                      generator: {
+                          // [] 的内容当做内置的变量
+                          // [name] 表示原先的文件名
+                          // [hash:6] 表示使用哈希字符串, 长度6
+                          // [ext] 表示后缀名 带 .
+                          filename: 'fonts/[name].[hash:4][ext]'
+                      }
+                  },
+                  {
+                      // 强烈不建议大家手写, 容易出错
+                      test: /\.m?js$/, // 匹配js结尾文件
+                      exclude: /(node_modules|bower_components)/, // 不转换这2个文件夹里的js
+                      use: {
+                          loader: 'babel-loader', // 使用加载器处理
+                          options: {
+                              presets: ['@babel/preset-env'] // 预设转码规则(用bable开发环境)
+                          }
+                      }
+                  }
+              ]
+          },
+          //webpackserver配置
+          devServer: {
+              port: 3000, // 端口号
+              open: true // 自动打开浏览器
+          }
+      }
+      ```
 
   6. 运行命令`npm run serve`启动webpack开发服务器
 
@@ -823,14 +823,14 @@ tags:
 
 ## 5.3 部署
 - 使用node+express发布静态网站
-  ```javascript
-  const express = require('express')
-  const app = express()
+    ```javascript
+    const express = require('express')
+    const app = express()
 
-  app.use(express.static('./dist'))
+    app.use(express.static('./dist'))
 
-  app.listen(4005)
-  ```
+    app.listen(4005)
+    ```
 
 # 6. 扩展功能
 ## 6.1 webpack4-图片打包
@@ -842,23 +842,23 @@ tags:
 
 - **步骤**：
   1. 安装包url-loader，file-loader
-    ```bash
-    npm install url-loader file-loader -D
-    ```
+      ```bash
+      npm install url-loader file-loader -D
+      ```
   2. webpack.config.js 配置
-    ```javascript
-    {
-      test: /\.(png|jpg|gif|jpeg)$/i,
-      use: [
-        {
-          loader: 'url-loader', // 匹配文件, 尝试转base64字符串打包到js中
-          options: {  // 配置limit, 超过8k, 不转base64字符串, 自动用file-loader复制文件到dist下
-            limit: 8 * 1024,
+      ```javascript
+      {
+        test: /\.(png|jpg|gif|jpeg)$/i,
+        use: [
+          {
+            loader: 'url-loader', // 匹配文件, 尝试转base64字符串打包到js中
+            options: {  // 配置limit, 超过8k, 不转base64字符串, 自动用file-loader复制文件到dist下
+              limit: 8 * 1024,
+            }
           }
-        }
-      ]
-    }
-    ```
+        ]
+      }
+      ```
 
 ## 6.2 webpack4-字体图标
 - webpack.config.js配置
@@ -892,15 +892,15 @@ tags:
 
 - **步骤**：
   1. webpack.config.js - 配置
-    ```javascript
-    module.exports = {
-      // ...其他配置
-      // development开发模式,webpack内部不会使用内置优化, 不压缩代码
-      // production生产模式,会压缩代码
-      mode: 'development', 
-      devtool: 'cheap-module-source-map', // cheap-module-source-map 开发模式下使用, 保证运行时的行数和源代码行数一致(默认不写是eval模式)
-    }
-    ```
+      ```javascript
+      module.exports = {
+        // ...其他配置
+        // development开发模式,webpack内部不会使用内置优化, 不压缩代码
+        // production生产模式,会压缩代码
+        mode: 'development', 
+        devtool: 'cheap-module-source-map', // cheap-module-source-map 开发模式下使用, 保证运行时的行数和源代码行数一致(默认不写是eval模式)
+      }
+      ```
   2. 重新启动开发服务器/打包, 观察是否有错误代码打包前的位置信息了
 
 - **devtool值说明**：
