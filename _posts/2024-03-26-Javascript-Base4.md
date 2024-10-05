@@ -116,9 +116,9 @@ tags:
   - 在数组中，数据的编号也叫**索引或下标**
   - 数组可以存储任意类型的数据
 
-![20241005210023](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241005210023.png)
+    ![20241005210023](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241005210023.png)
 
-![20241005210030](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241005210030.png)
+    ![20241005210030](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241005210030.png)
 
 - 数组长度：
   - 获取数组长度`arr.length`
@@ -265,7 +265,7 @@ tags:
     ```
 
 ## 3.6 排序：sort
-- arr. sort()：默认排序规则
+- `arr.sort()`：默认排序规则
 - 可以传入排序规则实现自定义排序
 
     **案例如下：**
