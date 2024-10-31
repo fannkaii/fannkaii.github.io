@@ -945,7 +945,7 @@ tags:
     ```
 
 # 4. 综合案例
-    ![20241023172330](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241023172330.png)
+![20241023172330](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241023172330.png)
 
 - `filter()` 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素，不会影响原数组
 - **返回值**：返回数组，包含了符合条件的所有元素。如果没有符合条件的元素则返回空数组
