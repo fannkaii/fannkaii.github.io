@@ -151,7 +151,7 @@ Structured Query Language，即SQL，SQL是关系型数据库标准语言，其�
      - ![20241119192930](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192930.png)
      - ![20241119192939](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192939.png)
 
-   - 配置数据库连接导出模型
+   - **配置数据库连接导出模型**
      - ![20241119192958](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192958.png)
      - ![20241119193006](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119193006.png)
      - ![20241119193015](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119193015.png)
