@@ -160,47 +160,47 @@ Structured Query Language，即SQL，SQL是关系型数据库标准语言，其�
 
 4. PD数据类型说明
 
-  | Standard data type | DBMS-specific physical data type | Content | Length |
-  | --- | --- | --- | --- |
-  | Integer | int / INTEGER | 32-bit integer | — |
-  | Short Integer | smallint / SMALLINT | 16-bit integer | — |
-  | Long Integer | int / INTEGER | 32-bit integer | — |
-  | Byte | tinyint / SMALLINT | 256 values | — |
-  | Number | numeric / NUMBER | Numbers with a fixed decimal point | Fixed |
-  | Decimal | decimal / NUMBER | Numbers with a fixed decimal point | Fixed |
-  | Float | float / FLOAT | 32-bit floating point numbers | Fixed |
-  | Short Float | real / FLOAT | Less than 32-bit point decimal number | — |
-  | Long Float | double precision / BINARY DOUBLE | 64-bit floating point numbers | — |
-  | Money | money / NUMBER | Numbers with a fixed decimal point | Fixed |
-  | Serial | numeric / NUMBER | Automatically incremented numbers | Fixed |
-  | Boolean | bit / SMALLINT | Two opposing values (true/false; yes/no; 1/0) | — |
+    | Standard data type | DBMS-specific physical data type | Content | Length |
+    | --- | --- | --- | --- |
+    | Integer | int / INTEGER | 32-bit integer | — |
+    | Short Integer | smallint / SMALLINT | 16-bit integer | — |
+    | Long Integer | int / INTEGER | 32-bit integer | — |
+    | Byte | tinyint / SMALLINT | 256 values | — |
+    | Number | numeric / NUMBER | Numbers with a fixed decimal point | Fixed |
+    | Decimal | decimal / NUMBER | Numbers with a fixed decimal point | Fixed |
+    | Float | float / FLOAT | 32-bit floating point numbers | Fixed |
+    | Short Float | real / FLOAT | Less than 32-bit point decimal number | — |
+    | Long Float | double precision / BINARY DOUBLE | 64-bit floating point numbers | — |
+    | Money | money / NUMBER | Numbers with a fixed decimal point | Fixed |
+    | Serial | numeric / NUMBER | Automatically incremented numbers | Fixed |
+    | Boolean | bit / SMALLINT | Two opposing values (true/false; yes/no; 1/0) | — |
 
-  | Standard data type | DBMS-specific physical data type | Content | Length |
-  | --- | --- | --- | --- |
-  | Characters | char / CHAR | Character strings | Fixed |
-  | Variable Characters | varchar / VARCHAR2 | Character strings | Maximum |
-  | Long Characters | varchar / CLOB | Character strings | Maximum |
-  | Long Var Characters | text / CLOB | Character strings | Maximum |
-  | Text | text / CLOB | Character strings | Maximum |
-  | Multibyte | nchar / NCHAR | Multibyte character strings | Fixed |
-  | Variable Multibyte | nvarchar / NVARCHAR2 | Multibyte character strings | Maximum |
+    | Standard data type | DBMS-specific physical data type | Content | Length |
+    | --- | --- | --- | --- |
+    | Characters | char / CHAR | Character strings | Fixed |
+    | Variable Characters | varchar / VARCHAR2 | Character strings | Maximum |
+    | Long Characters | varchar / CLOB | Character strings | Maximum |
+    | Long Var Characters | text / CLOB | Character strings | Maximum |
+    | Text | text / CLOB | Character strings | Maximum |
+    | Multibyte | nchar / NCHAR | Multibyte character strings | Fixed |
+    | Variable Multibyte | nvarchar / NVARCHAR2 | Multibyte character strings | Maximum |
 
-  | Standard data type | DBMS-specific physical data type | Content | Length |
-  | --- | --- | --- | --- |
-  | Date | date / DATE | Day, month, year | — |
-  | Time | time / DATE | Hour, minute, and second | — |
-  | Date & Time | datetime / DATE | Date and time | — |
-  | Timestamp | timestamp / TIMESTAMP | System date and time | — |
+    | Standard data type | DBMS-specific physical data type | Content | Length |
+    | --- | --- | --- | --- |
+    | Date | date / DATE | Day, month, year | — |
+    | Time | time / DATE | Hour, minute, and second | — |
+    | Date & Time | datetime / DATE | Date and time | — |
+    | Timestamp | timestamp / TIMESTAMP | System date and time | — |
 
-  | Standard data type | DBMS-specific physical data type | Content | Length |
-  | --- | --- | --- | --- |
-  | Binary | binary / RAW | Binary strings | Maximum |
-  | Long Binary | image / BLOB | Binary strings | Maximum |
-  | Bitmap | image / BLOB | Images in bitmap format (BMP) | Maximum |
-  | Image | image / BLOB | Images | Maximum |
-  | OLE | image / BLOB | OLE links | Maximum |
-  | Other | — | User-defined data type | — |
-  | Undefined | undefined | Undefined. Replaced by the default data type at generation. | — |
+    | Standard data type | DBMS-specific physical data type | Content | Length |
+    | --- | --- | --- | --- |
+    | Binary | binary / RAW | Binary strings | Maximum |
+    | Long Binary | image / BLOB | Binary strings | Maximum |
+    | Bitmap | image / BLOB | Images in bitmap format (BMP) | Maximum |
+    | Image | image / BLOB | Images | Maximum |
+    | OLE | image / BLOB | OLE links | Maximum |
+    | Other | — | User-defined data type | — |
+    | Undefined | undefined | Undefined. Replaced by the default data type at generation. | — |
 
 ## 2.4 数据库范式
 设计关系数据库时，遵从不同的规范要求，设计出合理的**关系型数据库**，这些不同的**规范要求**被称为不同的**范式**，各种范式呈**递次规范**，**越高的范式数据库冗余越小**。
