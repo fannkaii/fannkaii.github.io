@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "前后端交互四 跨域与JSONP"
+title: "前后端交互 四、跨域与JSONP"
 author: "Kai"
 header-style: text
 tags:
   - Javascript
-  - Ajax
+  - 跨域
 ---
 
 转自：https://juejin.cn/post/7242258285159972920
