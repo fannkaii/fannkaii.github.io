@@ -123,41 +123,40 @@ Structured Query Language，即SQL，SQL是关系型数据库标准语言，其�
   建议先画E-R图，再生成数据库
 
    - **创建项目，填写项目名称，选择保存目录**
-    ![20241119192516](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192516.png)
-    ![20241119192527](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192527.png)
+     - ![20241119192516](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192516.png)
+     - ![20241119192527](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192527.png)
 
    - **创建模型文件**
-    ![20241119192600](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192600.png)
-    ![20241119192612](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192612.png)
-    ![20241119192621](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192621.png)
-    ![20241119192633](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192633.png)
+     - ![20241119192600](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192600.png)
+     - ![20241119192612](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192612.png)
+     - ![20241119192621](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192621.png)
+     - ![20241119192633](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192633.png)
 
    - **创建表，添加字段**
-    ![20241119192703](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192703.png)
-
-    可以显示字段说明
-    ![20241119192723](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192723.png)
+     - ![20241119192703](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192703.png)
+     - 可以显示字段说明
+      ![20241119192723](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192723.png)
 
    - **生成物理数据模型**
-    ![20241119192744](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192744.png)
-    ![20241119192752](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192752.png)
-    ![20241119192800](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192800.png)
+     - ![20241119192744](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192744.png)
+     - ![20241119192752](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192752.png)
+     - ![20241119192800](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192800.png)
 
    - **生成SQL脚本**
-    ![20241119192829](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192829.png)
-    ![20241119192837](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192837.png)
+     - ![20241119192829](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192829.png)
+     - ![20241119192837](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192837.png)
 
 3. PD从数据库生成模型
    - **创建模型，选择数据库类型**
-    ![20241119192930](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192930.png)
-    ![20241119192939](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192939.png)
+     - ![20241119192930](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192930.png)
+     - ![20241119192939](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192939.png)
 
    - 配置数据库连接导出模型
-    ![20241119192958](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192958.png)
-    ![20241119193006](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119193006.png)
-    ![20241119193015](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119193015.png)
-    ![20241119193024](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119193024.png)
-    ![20241119193033](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119193033.png)
+     - ![20241119192958](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119192958.png)
+     - ![20241119193006](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119193006.png)
+     - ![20241119193015](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119193015.png)
+     - ![20241119193024](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119193024.png)
+     - ![20241119193033](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241119193033.png)
 
 4. PD数据类型说明
 
