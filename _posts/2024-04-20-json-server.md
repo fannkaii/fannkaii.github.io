@@ -56,26 +56,26 @@ tags:
 
 4. 参数说明
 - 语法：`json-server [options] <source>`
-    参数表：
-    | 参数               | 简写  | 说明                   | 默认值           |
-    | ------------------ | ----- | ---------------------- | ---------------- |
-    | --config           | -c    | 指定配置文件路径       | json-server.json |
-    | --port             | -p    | 指定端口               | 3000             |
-    | --host             | -H    | 指定主机名             | localhost        |
-    | --watch            | -w    | 监控文件变化           |                  |
-    | --routes           | -r    | 指定路由文件路径       |                  |
-    | --middlewares      | -m    | 指定中间件文件路径     |                  |
-    | --static           | -s    | 指定静态文件文件夹路径 |                  |
-    | --read-only        | --ro  | 指定只允许get请求      |                  |
-    | --no-cors          | --nc  | 禁止跨域共享           |                  |
-    | --no-gzip          | --ng  | 禁止gzip压缩           |                  |
-    | --snapshots        | -S    | 指定快照目录           | .                |
-    | --delay            | -d    | 指定延迟返回时长(ms)   |                  |
-    | --id               | -i    | 指定数据库的ID属性     | id               |
-    | --foreignKeySuffix | --fks | 指定外键前缀           | Id               |
-    | --quiet            | -q    | 抑制来自输出的日志消息 |                  |
-    | --help             | -h    | 显示帮助               |                  |
-    | --version          | -v    | 显示版本号             |                  |
+
+        | 参数               | 简写  | 说明                   | 默认值           |
+        | ------------------ | ----- | ---------------------- | ---------------- |
+        | --config           | -c    | 指定配置文件路径       | json-server.json |
+        | --port             | -p    | 指定端口               | 3000             |
+        | --host             | -H    | 指定主机名             | localhost        |
+        | --watch            | -w    | 监控文件变化           |                  |
+        | --routes           | -r    | 指定路由文件路径       |                  |
+        | --middlewares      | -m    | 指定中间件文件路径     |                  |
+        | --static           | -s    | 指定静态文件文件夹路径 |                  |
+        | --read-only        | --ro  | 指定只允许get请求      |                  |
+        | --no-cors          | --nc  | 禁止跨域共享           |                  |
+        | --no-gzip          | --ng  | 禁止gzip压缩           |                  |
+        | --snapshots        | -S    | 指定快照目录           | .                |
+        | --delay            | -d    | 指定延迟返回时长(ms)   |                  |
+        | --id               | -i    | 指定数据库的ID属性     | id               |
+        | --foreignKeySuffix | --fks | 指定外键前缀           | Id               |
+        | --quiet            | -q    | 抑制来自输出的日志消息 |                  |
+        | --help             | -h    | 显示帮助               |                  |
+        | --version          | -v    | 显示版本号             |                  |
 
 ## 4.1 创建json数据
 - 在空文件夹test下，执行命令
