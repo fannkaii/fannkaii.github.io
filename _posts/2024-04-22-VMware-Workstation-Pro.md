@@ -293,7 +293,7 @@ tags:
 - 实际配置步骤
   1. 选中虚拟机右键，设置虚拟机的网络连接模式为桥接模式
     ![20241201222210](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222210.png)
-
+    -=-=-=-=-=-=-=-=-=-=-=-=
     ![20241201222220](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222220.png)
 
   2. 查看当前宿主机网络ipconfig / all
@@ -304,19 +304,19 @@ tags:
     cd /etc/sysconfig/network-scripts
     ls
     ```
-
+    -=-=-=-=-=-=-=-=-=-=-=-=
     ![20241201222316](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222316.png)
 
     ```bash
     vi ifcfg-ens33
     ```
-
+    -=-=-=-=-=-=-=-=-=-=-=-=
     初始文件内容如下：
     ![20241201222345](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222345.png)
-
+    -=-=-=-=-=-=-=-=-=-=-=-=
     修改后的内容如下：`BOOTPROTO=static`表示使用静态地址协议，`ONBOOT=yes`表示系统启动是激活网络
     ![20241201222414](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222414.png)
-
+    -=-=-=-=-=-=-=-=-=-=-=-=
     修改完成需要重启虚拟机网卡
     ```bash
     systemctl restart network.service
