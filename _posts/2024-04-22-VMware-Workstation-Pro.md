@@ -304,19 +304,14 @@ tags:
     cd /etc/sysconfig/network-scripts
     ls
     ```
-    -=-=-=-=-=-=-=-=-=-=-=-=
     ![20241201222316](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222316.png)
-
     ```bash
     vi ifcfg-ens33
     ```
-    -=-=-=-=-=-=-=-=-=-=-=-=
     初始文件内容如下：
     ![20241201222345](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222345.png)
-    -=-=-=-=-=-=-=-=-=-=-=-=
     修改后的内容如下：`BOOTPROTO=static`表示使用静态地址协议，`ONBOOT=yes`表示系统启动是激活网络
     ![20241201222414](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222414.png)
-    -=-=-=-=-=-=-=-=-=-=-=-=
     修改完成需要重启虚拟机网卡
     ```bash
     systemctl restart network.service
@@ -326,7 +321,6 @@ tags:
      - 虚拟机`ping 宿主机`，验证和宿主机通信是否ok
      - 虚拟机`ping www.baidu.com`，验证和公网通信是否ok
       ![20241201222530](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222530.png)
-
      - 宿主机ping虚拟机，验证和虚拟机通信是否ok
       ![20241201222545](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222545.png)
 
@@ -342,12 +336,12 @@ tags:
 - 实际配置步骤
     1. 选中虚拟机右键，设置虚拟机的网络连接模式为NAT模式
       ![20241201222655](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222655.png)
-
+      -=-=-=-=-=-=-=-=-=-=-=-=
       ![20241201222704](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222704.png)
 
     2. 查看NAT模式下的NAT设置和DHCP设置的参数
       ![20241201222721](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222721.png)
-
+      -=-=-=-=-=-=-=-=-=-=-=-=
       ![20241201222727](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222727.png)
 
     3. 配置宿主机网卡VMnet8
@@ -359,16 +353,13 @@ tags:
       ls
       ```
       ![20241201222823](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222823.png)
-
       ```bash
       vi ifcfg-ens33
       ```
       初始文件内容如下：
       ![20241201222848](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222848.png)
-
       修改后的内容如下：`BOOTPROTO=static`表示使用静态地址协议，`ONBOOT=yes`表示系统启动是激活网络
       ![20241201222914](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201222914.png)
-
       修改完成需要重启虚拟机网卡
       ```bash
       systemctl restart network.service
@@ -378,7 +369,6 @@ tags:
        - 虚拟机`ping 宿主机`，验证和宿主机通信是否ok
        - 虚拟机`ping www.baidu.com`，验证和公网通信是否ok
         ![20241201223001](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201223001.png)
-
        - 宿主机ping虚拟机，验证和虚拟机通信是否ok
         ![20241201223029](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201223029.png)
 
@@ -391,7 +381,7 @@ tags:
 - 实际配置步骤
     1. 选中虚拟机右键，设置虚拟机的网络连接模式为仅主机模式
       ![20241201223116](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201223116.png)
-
+      -=-=-=-=-=-=-=-=-=-=-=-=
       ![20241201223123](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201223123.png)
 
     2. 查看仅主机模式下的DHCP设置参数
@@ -403,17 +393,13 @@ tags:
       ls
       ```
       ![20241201223205](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201223205.png)
-
       ```bash
       vi ifcfg-ens33
       ```
-      
       初始文件内容如下：
       ![20241201223233](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201223233.png)
-
       修改后的内容如下：`BOOTPROTO=static`表示使用静态地址协议，`ONBOOT=yes`表示系统启动是激活网络
       ![20241201223252](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201223252.png)
-
       修改完成需要重启虚拟机网卡
       ```bash
       systemctl restart network.service
@@ -423,7 +409,6 @@ tags:
        - 虚拟机`ping 宿主机`，验证和宿主机通信是否ok
        - 虚拟机`ping www.baidu.com`，验证和公网通信是否ok
         ![20241201223419](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201223419.png)
-
        - 宿主机ping虚拟机，验证和虚拟机通信是否ok
         ![20241201223434](https://raw.githubusercontent.com/fannkaii/MyPicBed/master/images/20241201223434.png)
 
